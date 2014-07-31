@@ -71,7 +71,16 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+current_dir() {
+  echo "%{$fg_bold[cyan]%}$(pwd)%{$reset_color%}"
+}
+
+BASE_PROMPT=$'$(current_dir) $(git_dirty)$(need_push)\n '
+if [[ $EUID == 0 ]] ; then
+  export PROMPT="$BASE_PROMPT# "
+else
+  export PROMPT="$BASE_PROMPT\$ "
+fi
 
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
