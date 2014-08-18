@@ -2,20 +2,25 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+call vundle#begin()
 
 " Vundles
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-sensible' " Sensible defaults for Vim
-Bundle 'tpope/vim-surround' " Surround text
-Bundle 'tpope/vim-fugitive' " Git integration
-Bundle 'nanotech/jellybeans.vim' " Theme
-Bundle 'Lokaltog/vim-powerline' " Statusline
-Bundle 'scrooloose/syntastic' " Syntax highlighting
-Bundle 'kien/ctrlp.vim' " File opener
-Bundle 'rking/ag.vim' " Ack integration
-Bundle 'elixir-lang/vim-elixir' " Elixir syntax
-Bundle 'slim-template/vim-slim' " Vim syntax
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdcommenter' " Easy commenting
+Plugin 'Townk/vim-autoclose' " Autoclose (, etc
+Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
+Plugin 'tpope/vim-surround' " Surround text
+Plugin 'tpope/vim-fugitive' " Git integration
+Plugin 'nanotech/jellybeans.vim' " Theme
+Plugin 'Lokaltog/vim-powerline' " Statusline
+Plugin 'scrooloose/syntastic' " Syntax highlighting
+Plugin 'kien/ctrlp.vim' " File opener
+Plugin 'rking/ag.vim' " Ack integration
+Plugin 'elixir-lang/vim-elixir' " Elixir syntax
+Plugin 'slim-template/vim-slim' " Vim syntax
+
+call vundle#end() " required
 
 filetype plugin indent on
 
