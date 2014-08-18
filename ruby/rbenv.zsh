@@ -1,2 +1,3 @@
 export PATH="$HOME/.rbenv/bin:~/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
+# NOTE: moved to zsh/zshrc.symlink because of some fuckery
+#eval "$(rbenv init -)"

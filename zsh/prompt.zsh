@@ -75,7 +75,7 @@ current_dir() {
   echo "%{$fg_bold[cyan]%}$(pwd)%{$reset_color%}"
 }
 
-BASE_PROMPT=$'$(current_dir) $(git_dirty)$(need_push)\n '
+BASE_PROMPT=$'$(current_dir) $(git_dirty)$(need_push)$(rb_prompt)\n '
 if [[ $EUID == 0 ]] ; then
   export PROMPT="$BASE_PROMPT# "
 else
