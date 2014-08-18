@@ -1,4 +1,24 @@
-syntax on
+set nocompatible
+filetype off
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundles
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-sensible' " Sensible defaults for Vim
+Bundle 'tpope/vim-surround' " Surround text
+Bundle 'tpope/vim-fugitive' " Git integration
+Bundle 'nanotech/jellybeans.vim' " Theme
+Bundle 'Lokaltog/vim-powerline' " Statusline
+Bundle 'scrooloose/syntastic' " Syntax highlighting
+Bundle 'kien/ctrlp.vim' " File opener
+Bundle 'rking/ag.vim' " Ack integration
+Bundle 'elixir-lang/vim-elixir' " Elixir syntax
+Bundle 'slim-template/vim-slim' " Vim syntax
+
+filetype plugin indent on
+
+let mapleader=","
+
+color jellybeans
