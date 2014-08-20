@@ -7,6 +7,8 @@ call vundle#begin()
 
 " Vundles
 Plugin 'gmarik/vundle'
+Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
+Plugin 'Valloric/YouCompleteMe' " Code completion
 Plugin 'scrooloose/nerdcommenter' " Easy commenting
 Plugin 'Townk/vim-autoclose' " Autoclose (, etc
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
