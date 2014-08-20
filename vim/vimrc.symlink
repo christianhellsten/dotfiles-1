@@ -1,3 +1,5 @@
+""""""""""""""""""""""""""""
+
 set nocompatible
 filetype off
 
@@ -8,12 +10,13 @@ call vundle#begin()
 " Vundles
 Plugin 'gmarik/vundle'
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
-Plugin 'Valloric/YouCompleteMe' " Code completion
+" Plugin 'Valloric/YouCompleteMe' " Code completion. Not working.
 Plugin 'scrooloose/nerdcommenter' " Easy commenting
 Plugin 'Townk/vim-autoclose' " Autoclose (, etc
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
 Plugin 'tpope/vim-surround' " Surround text
 Plugin 'tpope/vim-fugitive' " Git integration
+"Plugin 'tpope/vim-haml' " HAML & Sass
 Plugin 'nanotech/jellybeans.vim' " Theme
 Plugin 'Lokaltog/vim-powerline' " Statusline
 Plugin 'scrooloose/syntastic' " Syntax highlighting
@@ -22,15 +25,38 @@ Plugin 'rking/ag.vim' " Ack integration
 Plugin 'elixir-lang/vim-elixir' " Elixir syntax
 Plugin 'slim-template/vim-slim' " Vim syntax
 
+" Snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 call vundle#end() " required
 
 filetype plugin indent on
 
 let mapleader=","
 
+""""""""""""""""""""""""""""
+
 color jellybeans
 
+" Configure tabs and spaces
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+
+" We want undo
+set undofile
+set undodir=~/.vim/undo/
+
+" Highlight search results
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+" Configure ctrl-p
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*
+
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_max_height = 30
