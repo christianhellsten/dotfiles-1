@@ -70,6 +70,6 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
 " Enable automatic code folding for Ruby
-autocmd FileType ruby,eruby
-      \ set foldmethod=expr |
-      \ set foldexpr=getline(v:lnum)=~'^\\s*#'
+"autocmd FileType ruby,eruby
+      "\ set foldmethod=expr |
+      "\ set foldexpr=getline(v:lnum)=~'^\\s*#'
