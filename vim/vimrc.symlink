@@ -42,6 +42,8 @@ let mapleader=","
 """"""""""""""""""""""""""""
 
 color jellybeans
+"colorscheme molokai
+"colorscheme vibrantink
 
 " Configure tabs and spaces
 set tabstop=2
@@ -59,11 +61,9 @@ match OverLength /\%81v.\+/
 
 " Configure ctrl-p
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*
-
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
 
-set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting

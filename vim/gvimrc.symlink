@@ -1,0 +1,4 @@
+" Remove stuff
+set guioptions-=L " Remove scrollbar
+"set guioptions-=r " Disable window resize
+set guioptions-=T
