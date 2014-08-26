@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 " Plugin 'Valloric/YouCompleteMe' " Code completion. Not working.
+Plugin 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
+Plugin 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 Plugin 'scrooloose/nerdcommenter' " Easy commenting
 Plugin 'Townk/vim-autoclose' " Autoclose (, etc
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
@@ -60,3 +62,14 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
+
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+" Enable automatic code folding for Ruby
+autocmd FileType ruby,eruby
+      \ set foldmethod=expr |
+      \ set foldexpr=getline(v:lnum)=~'^\\s*#'
