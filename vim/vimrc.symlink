@@ -51,9 +51,11 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-" We want undo
+" Persistent undo will save us one day...
 set undofile
 set undodir=~/.vim/undo/
+set undolevels = 1000  " maximum number of changes that can be undone
+set undoreload = 10000 " maximum number lines to save for undo on a buffer reload
 
 " Highlight search results
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
