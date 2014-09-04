@@ -71,7 +71,21 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+" Set tab to do omnicompletion.
+" NOTE: Conflicts with snipmate. Do <ctrl-p> instead.
+"function! InsertTabWrapper()
+    "let col = col('.') - 1
+    "if !col || getline('.')[col - 1] !~ '\k'
+        "return "\<tab>"
+    "else
+        "return "\<c-p>"
+    "endif
+"endfunction
+
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
 " Enable automatic code folding for Ruby
+" NOTE: looks ugly.
 "autocmd FileType ruby,eruby
       "\ set foldmethod=expr |
       "\ set foldexpr=getline(v:lnum)=~'^\\s*#'
