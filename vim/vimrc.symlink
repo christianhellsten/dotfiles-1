@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 " Plugin 'Valloric/YouCompleteMe' " Code completion. Not working.
+Plugin 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
+Plugin 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 Plugin 'scrooloose/nerdcommenter' " Easy commenting
 Plugin 'Townk/vim-autoclose' " Autoclose (, etc
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
@@ -49,9 +51,11 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-" We want undo
+" Persistent undo will save us one day...
 set undofile
-set undodir=~/.vim/undo/
+set undodir=~/.vim/undo/ " NOTE: this directory MUST exist
+set undolevels=1000  " number of changes that can be undone
+set undoreload=10000 " number of lines to save
 
 " Highlight search results
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -61,3 +65,27 @@ match OverLength /\%81v.\+/
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
+
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+" Set tab to do omnicompletion.
+" NOTE: Conflicts with snipmate. Do <ctrl-p> instead.
+"function! InsertTabWrapper()
+    "let col = col('.') - 1
+    "if !col || getline('.')[col - 1] !~ '\k'
+        "return "\<tab>"
+    "else
+        "return "\<c-p>"
+    "endif
+"endfunction
+
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+" Enable automatic code folding for Ruby
+" NOTE: looks ugly.
+"autocmd FileType ruby,eruby
+      "\ set foldmethod=expr |
+      "\ set foldexpr=getline(v:lnum)=~'^\\s*#'
