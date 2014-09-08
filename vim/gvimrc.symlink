@@ -1,4 +1,14 @@
 " Remove stuff
-set guioptions-=L " Remove scrollbar
+set guioptions-=L
 "set guioptions-=r " Disable window resize
 set guioptions-=T
+set fuopt=maxvert,maxhorz
+
+" Position and maximize window
+:winpos 0 0 " Center window
+vsplit " Split window vertically
+"wincmd l  " Move to right window
+"split     " Split window horizontally
+
+" Set font
+set guifont=Monaco:h14
