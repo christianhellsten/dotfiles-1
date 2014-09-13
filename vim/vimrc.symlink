@@ -66,6 +66,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
 
+" Highlight search matches
+set hlsearch
+
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
