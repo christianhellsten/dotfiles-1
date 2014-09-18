@@ -1,4 +1,5 @@
 alias ls="ls -lart"
+alias ack="ack -a"
 # What's my IP?
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 
