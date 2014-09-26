@@ -11,3 +11,11 @@ then
   echo "  Installing ruby-build for you."
   brew install ruby-build > /tmp/ruby-build-install.log
 fi
+
+rbenv install 2.1.3
+rbenv global 2.1.3
+
+gem install bundler
+gem install rake
+
+rbenv rehash
