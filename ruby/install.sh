@@ -15,7 +15,10 @@ fi
 rbenv install 2.1.3
 rbenv global 2.1.3
 
+# Install gems
 gem install bundler
 gem install rake
+gem install rubygems-bundler # no more bundle exec crap
+gem regenerate_binstubs
 
 rbenv rehash
