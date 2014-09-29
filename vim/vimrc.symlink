@@ -75,7 +75,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
 " Configure ctrl-p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
 
