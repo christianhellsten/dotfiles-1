@@ -1,4 +1,15 @@
 """"""""""""""""""""""""""""
+" # Tips
+"
+" ## Code completion shortcuts
+"
+" ctrl+x+p
+" ctrl+n
+"
+" ## File opener
+"
+" ctrl+p
+"
 
 set nocompatible
 filetype off
@@ -14,9 +25,9 @@ Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plugin 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 Plugin 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 Plugin 'scrooloose/nerdcommenter' " Easy commenting
-Plugin 'Townk/vim-autoclose' " Autoclose (, etc
+"Plugin 'Townk/vim-autoclose' " Autoclose (, etc. Don't like this.
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
-Plugin 'tpope/vim-surround' " Surround text
+"Plugin 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
 Plugin 'tpope/vim-fugitive' " Git integration
 "Plugin 'tpope/vim-haml' " HAML & Sass
 Plugin 'nanotech/jellybeans.vim' " Theme
@@ -26,6 +37,8 @@ Plugin 'kien/ctrlp.vim' " File opener
 Plugin 'rking/ag.vim' " Ack integration
 Plugin 'elixir-lang/vim-elixir' " Elixir syntax
 Plugin 'slim-template/vim-slim' " Vim syntax
+Plugin 'kchmck/vim-coffee-script' " Coffeescript syntax
+Plugin 'mustache/vim-mustache-handlebars' " Handlebars and mustaches
 
 " Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -65,6 +78,9 @@ match OverLength /\%81v.\+/
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
+
+" Remove ugly buffer divider
+:set fillchars+=vert:\ 
 
 " Highlight search matches
 set hlsearch
