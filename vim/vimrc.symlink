@@ -96,6 +96,8 @@ filetype plugin on    " Enable filetype-specific plugins
 "
 "   :tabe index.html
 "
+nnoremap tn :tabnew<CR>
+nnoremap td :tabclose<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
