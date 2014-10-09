@@ -12,3 +12,8 @@ vsplit " Split window vertically
 
 " Set font
 set guifont=Monaco:h14
+
+" Change between MacVim windows with CMD+left/right (doesn't work in
+" fullscreen)
+"nmap <D-Right> :maca _cycleWindowsBackwards:<CR> 
+"nmap <D-Left> :maca _cycleWindows:<CR> 

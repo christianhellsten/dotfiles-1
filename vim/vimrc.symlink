@@ -75,7 +75,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
 " Configure ctrl-p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*/doc/*
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
 
@@ -89,6 +89,13 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+
+" Faster tab switching
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+
+" Mouse can interact with tabs, etc
+set mouse=a
 
 " Set tab to do omnicompletion.
 " NOTE: Conflicts with snipmate. Do <ctrl-p> instead.
