@@ -91,11 +91,19 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
 " Faster tab switching
+"
+" Tips:
+"
+"   :tabe index.html
+"
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
 " Mouse can interact with tabs, etc
 set mouse=a
+
+" Allow switching away from unsaved buffer
+set hidden
 
 " Set tab to do omnicompletion.
 " NOTE: Conflicts with snipmate. Do <ctrl-p> instead.
