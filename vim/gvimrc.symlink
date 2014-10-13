@@ -11,9 +11,18 @@ vsplit " Split window vertically
 "split     " Split window horizontally
 
 " Set font
-set guifont=Monaco:h14
+set guifont=Source\ Code\ Pro\ Light:h15
+"set guifont=Monaco:h14
+"
 
 " Change between MacVim windows with CMD+left/right (doesn't work in
 " fullscreen)
 "nmap <D-Right> :maca _cycleWindowsBackwards:<CR> 
 "nmap <D-Left> :maca _cycleWindows:<CR> 
+
+"
+" Customize UI
+"
+" T = MacVim toolbar looks the same as in console
+" A,a = selection...
+set guioptions=TAa

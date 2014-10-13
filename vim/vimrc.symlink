@@ -91,11 +91,6 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-" Set font
-set guifont=Source_Code_Pro:h15:cANSI
-"set guifont=Monaco:h14
-"
-
 " Faster tab switching
 "
 " Tips:
