@@ -31,6 +31,7 @@ Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
 Plugin 'tpope/vim-fugitive' " Git integration
 "Plugin 'tpope/vim-haml' " HAML & Sass
 Plugin 'nanotech/jellybeans.vim' " Theme
+Plugin 'lsdr/monokai' " Sublimetext's theme
 Plugin 'Lokaltog/vim-powerline' " Statusline
 Plugin 'scrooloose/syntastic' " Syntax highlighting
 Plugin 'kien/ctrlp.vim' " File opener
@@ -89,6 +90,11 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+
+" Set font
+set guifont=Source_Code_Pro:h15:cANSI
+"set guifont=Monaco:h14
+"
 
 " Faster tab switching
 "
