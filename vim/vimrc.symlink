@@ -102,6 +102,9 @@ nnoremap td :tabclose<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
+" Show 'weird' characters, e.g. encoded space
+set list
+
 " Mouse can interact with tabs, etc
 set mouse=a
 
