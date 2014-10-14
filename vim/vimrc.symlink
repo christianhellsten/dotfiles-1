@@ -106,7 +106,7 @@ nnoremap <S-Tab> gT
 set list
 
 " Mouse can interact with tabs, etc
-set mouse=a
+"set mouse=a
 
 " Allow switching away from unsaved buffer
 set hidden
