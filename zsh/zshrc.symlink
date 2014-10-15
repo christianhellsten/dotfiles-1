@@ -1,3 +1,5 @@
+export LC_ALL=en_US.UTF-8
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 

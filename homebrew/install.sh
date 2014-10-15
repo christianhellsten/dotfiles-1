@@ -13,6 +13,27 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark
+brew install tree
+brew install wget
+brew install ack
+brew install macvim
+brew install caskroom/cask/brew-cask
+
+# Setup casks
+brew tap phinze/cask
+brew tap caskroom/versions
+brew tap caskroom/fonts
+
+# Install prågrams
+brew cask install dash
+brew cask install google-chrome
+brew cask install vlc
+
+# Install fonts
+brew cask install font-source-code-pro
+brew cask install font-fira-sans
+
+# Yes, cleanup
+brew cleanup
 
 exit 0

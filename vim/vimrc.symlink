@@ -108,7 +108,7 @@ nnoremap <D-f> :Ag
 set list
 
 " Mouse can interact with tabs, etc
-set mouse=a
+"set mouse=a
 
 " Allow switching away from unsaved buffer
 set hidden
