@@ -30,12 +30,13 @@ Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
 "Plugin 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
 Plugin 'tpope/vim-fugitive' " Git integration
 "Plugin 'tpope/vim-haml' " HAML & Sass
+Plugin 'rking/ag.vim' " Silver searcher integration
 Plugin 'nanotech/jellybeans.vim' " Theme
 Plugin 'lsdr/monokai' " Sublimetext's theme
-Plugin 'Lokaltog/vim-powerline' " Statusline
+"Plugin 'Lokaltog/vim-powerline' " Statusline, but no tab styling
+Plugin 'bling/vim-airline' " status and tab styling
 Plugin 'scrooloose/syntastic' " Syntax highlighting
 Plugin 'kien/ctrlp.vim' " File opener
-Plugin 'rking/ag.vim' " Ack integration
 Plugin 'elixir-lang/vim-elixir' " Elixir syntax
 Plugin 'slim-template/vim-slim' " Vim syntax
 Plugin 'kchmck/vim-coffee-script' " Coffeescript syntax
@@ -101,6 +102,7 @@ nnoremap tn :tabnew<CR>
 nnoremap td :tabclose<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+nnoremap <D-f> :Ag
 
 " Show 'weird' characters, e.g. encoded space
 set list
