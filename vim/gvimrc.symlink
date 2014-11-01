@@ -25,4 +25,4 @@ set guifont=Source\ Code\ Pro\ Light:h15
 "
 " T = MacVim toolbar looks the same as in console
 " A,a = selection...
-set guioptions=TAa
+set guioptions=TA
