@@ -29,6 +29,7 @@ Plugin 'docunext/closetag.vim' " Close HTML and XML tags
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
 "Plugin 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
 Plugin 'tpope/vim-fugitive' " Git integration
+Plugin 'scrooloose/nerdtree' " File browser
 "Plugin 'tpope/vim-haml' " HAML & Sass
 Plugin 'rking/ag.vim' " Silver searcher integration
 Plugin 'nanotech/jellybeans.vim' " Theme
@@ -103,6 +104,8 @@ nnoremap td :tabclose<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <D-f> :Ag
+" NERDTree = ctrl-n
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Show 'weird' characters, e.g. encoded space
 set list
