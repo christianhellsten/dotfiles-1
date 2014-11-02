@@ -25,7 +25,7 @@ Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plugin 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 Plugin 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 Plugin 'scrooloose/nerdcommenter' " Easy commenting
-"Plugin 'Townk/vim-autoclose' " Autoclose (, etc. Don't like this.
+Plugin 'docunext/closetag.vim' " Close HTML and XML tags
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
 "Plugin 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
 Plugin 'tpope/vim-fugitive' " Git integration
