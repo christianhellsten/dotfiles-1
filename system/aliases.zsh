@@ -5,6 +5,8 @@ alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias rgrep="grep -r"
 # Fix ack
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
+# Silver searcher pager!!!
+alias ag='ag --pager "less -r"'
 
 #alias l="ls -lAh --color"
 #alias ll="ls -l --color"
