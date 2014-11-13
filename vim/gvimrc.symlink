@@ -1,7 +1,3 @@
-" Remove stuff
-set guioptions-=L
-"set guioptions-=r " Disable window resize
-set guioptions-=T
 set fuopt=maxvert,maxhorz
 
 " Position and maximize window
@@ -24,5 +20,10 @@ set guifont=Source\ Code\ Pro\ Light:h15
 " Customize UI
 "
 " T = MacVim toolbar looks the same as in console
-" A,a = selection...
+" A,a = autoselect visual/modeless...
+" L = left-hand scrollbar
+"
 set guioptions=TA
+" Remove non-esseentials
+set guioptions-=L
+set guioptions-=T

@@ -7,6 +7,8 @@ alias rgrep="grep -r"
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
 # Silver searcher pager!!!
 alias ag='ag --pager "less -r"'
+# OSX version of: sudo netstat | grep LISTEN
+alias netstat-listen='sudo lsof -i -n -P | grep TCP'
 
 #alias l="ls -lAh --color"
 #alias ll="ls -l --color"
