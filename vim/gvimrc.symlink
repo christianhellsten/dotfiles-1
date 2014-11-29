@@ -1,5 +1,7 @@
 set fuopt=maxvert,maxhorz
 
+colorscheme monokai
+
 " Position and maximize window
 :winpos 0 0 " Center window
 vsplit " Split window vertically
