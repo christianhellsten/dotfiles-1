@@ -1,9 +1,10 @@
 export EDITOR='vim'
-# No "bundle exec". Requires Rubygems 2.2
-export RUBYGEMS_GEMDEPS=-
+
+# No "bundle exec". Requires Rubygems 2.2. Crap doesn't work...
+# export RUBYGEMS_GEMDEPS=-
+
 # Legacy stuff, LOL
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
 
 # Fix readline on OSX, see e.g.:
 # https://github.com/guard/guard/wiki/Add-Readline-support-to-Ruby-on-Mac-OS-X

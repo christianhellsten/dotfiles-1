@@ -8,9 +8,11 @@
 "
 " ## File opener
 "
-" ctrl+p
+" ctrl+p Open file
+" ctrl+d Toggle between full-path search and filename only search.
+" ctrl+r Toggle between the string mode and full regexp mode.
 "
-
+"
 set nocompatible
 filetype off
 
@@ -78,7 +80,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
 " Configure ctrl-p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*/doc/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*/doc/*,*/target/*
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
 
