@@ -29,3 +29,6 @@ set guioptions=TA
 " Remove non-esseentials
 set guioptions-=L
 set guioptions-=T
+
+" Fixes fullscreen mode issues in Yosemite
+set lines=999
