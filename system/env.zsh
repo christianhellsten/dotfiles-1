@@ -7,7 +7,7 @@ export EDITOR='vim'
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # Go
-export GOPATH="/usr/local/opt/go/libexec/bin"
+export GOPATH="$HOME/projects/golang"
 export PATH="$GOPATH/bin:$PATH"
 
 # Fix readline on OSX, see e.g.:
