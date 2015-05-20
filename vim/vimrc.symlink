@@ -96,6 +96,10 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+
+" Don't get stuck while scrolling
+set scrolloff=6
+
 " Faster tab switching
 "
 " Tips:
