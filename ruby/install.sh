@@ -12,8 +12,8 @@ then
   brew install ruby-build > /tmp/ruby-build-install.log
 fi
 
-rbenv install 2.1.3
-rbenv global 2.1.3
+rbenv install 2.1.7
+rbenv global 2.1.7
 
 # Install gems
 gem install bundler

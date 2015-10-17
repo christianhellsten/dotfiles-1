@@ -15,7 +15,9 @@ fi
 # Install homebrew packages
 brew install tree
 brew install wget
-brew install ack
+brew install the_silver_searcher
+brew install zsh
+#brew install ack
 brew install macvim
 brew install caskroom/cask/brew-cask
 
@@ -26,7 +28,7 @@ brew tap caskroom/fonts
 
 # Install prågrams
 brew cask install dash
-brew cask install google-chrome
+#brew cask install google-chrome
 brew cask install vlc
 
 # Install fonts
