@@ -11,6 +11,8 @@ alias ag='ag --pager "less -r"'
 alias netstat-listen='sudo lsof -i -n -P | grep TCP'
 # IOS Simulator
 alias ios-simulator='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
+# TODO
+alias t='todo.sh'
 
 #alias l="ls -lAh --color"
 #alias ll="ls -l --color"

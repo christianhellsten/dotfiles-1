@@ -27,7 +27,7 @@ brew tap caskroom/versions
 brew tap caskroom/fonts
 
 # Install prågrams
-brew cask install dash
+#brew cask install dash
 #brew cask install google-chrome
 brew cask install vlc
 
