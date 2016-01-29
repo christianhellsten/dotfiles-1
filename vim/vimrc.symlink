@@ -41,6 +41,7 @@ Plugin 'bling/vim-airline' " status and tab styling
 "Plugin 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
 Plugin 'kien/ctrlp.vim' " File opener
 Plugin 'fatih/vim-go' " Go syntax
+Plugin 'elixir-lang/vim-elixir' " Elixir syntax
 "Plugin 'elixir-lang/vim-elixir' " Elixir syntax
 Plugin 'slim-template/vim-slim' " Vim syntax
 Plugin 'kchmck/vim-coffee-script' " Coffeescript syntax
