@@ -37,7 +37,7 @@ Plugin 'rking/ag.vim' " Silver searcher integration
 Plugin 'nanotech/jellybeans.vim' " Theme
 Plugin 'lsdr/monokai' " Sublimetext's theme
 "Plugin 'Lokaltog/vim-powerline' " Statusline, but no tab styling
-Plugin 'bling/vim-airline' " status and tab styling
+Plugin 'vim-airline/vim-airline-themes' " status and tab styling
 "Plugin 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
 Plugin 'kien/ctrlp.vim' " File opener
 Plugin 'fatih/vim-go' " Go syntax
