@@ -42,7 +42,9 @@ Plugin 'bling/vim-airline' " status and tab styling
 Plugin 'kien/ctrlp.vim' " File opener
 Plugin 'fatih/vim-go' " Go syntax
 "Plugin 'elixir-lang/vim-elixir' " Elixir syntax
+Plugin 'mxw/vim-jsx' " JSX syntax
 Plugin 'slim-template/vim-slim' " Vim syntax
+Plugin 'leafgarland/typescript-vim' " typescript syntax
 Plugin 'kchmck/vim-coffee-script' " Coffeescript syntax
 "Plugin 'mustache/vim-mustache-handlebars' " Handlebars and mustaches
 

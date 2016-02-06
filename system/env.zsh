@@ -2,6 +2,8 @@ export EDITOR='vim'
 
 # No "bundle exec". Requires Rubygems 2.2. Crap doesn't work...
 # export RUBYGEMS_GEMDEPS=-
+#
+export PATH=~/bin:$PATH
 
 # Legacy stuff, LOL
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
