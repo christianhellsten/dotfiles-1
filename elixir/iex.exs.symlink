@@ -1,7 +1,15 @@
 defmodule R do
   def reload! do
+    #
+    # TODO: How is this different from:
+    #
+    #   IEx.Helpers.r(Snippets.Controller.Tag)
+    #   IEx.Helpers.recompile
+    #
     Mix.Task.reenable "compile.elixir"
     Application.stop(Mix.Project.config[:app])
+    # Views require clean
+    Mix.Task.run "clean"
     Mix.Task.run "compile.elixir"
     Application.start(Mix.Project.config[:app], :permanent)
   end
