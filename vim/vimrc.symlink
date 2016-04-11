@@ -21,6 +21,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " Vundles
+"Plugin 'vim-scripts/SQLUtilities' # Does not do what it says
 Plugin 'gmarik/vundle'
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 " Plugin 'Valloric/YouCompleteMe' " Code completion. Not working.
@@ -36,14 +37,12 @@ Plugin 'scrooloose/nerdtree' " File browser
 Plugin 'rking/ag.vim' " Silver searcher integration
 Plugin 'nanotech/jellybeans.vim' " Theme
 Plugin 'lsdr/monokai' " Sublimetext's theme
-"Plugin 'Lokaltog/vim-powerline' " Statusline, but no tab styling
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes' " status and tab styling
 "Plugin 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
 Plugin 'kien/ctrlp.vim' " File opener
 Plugin 'fatih/vim-go' " Go syntax
 Plugin 'elixir-lang/vim-elixir' " Elixir syntax
-"Plugin 'elixir-lang/vim-elixir' " Elixir syntax
 Plugin 'mxw/vim-jsx' " JSX syntax
 Plugin 'slim-template/vim-slim' " Vim syntax
 Plugin 'leafgarland/typescript-vim' " typescript syntax
