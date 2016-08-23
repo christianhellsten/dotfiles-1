@@ -16,6 +16,8 @@
 set nocompatible
 filetype off
 
+" Fix airline-vim performance issues
+set fillchars=diff:·
 set rtp+=~/.vim/bundle/vundle/
 
 call vundle#begin()
@@ -84,7 +86,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
 " Configure ctrl-p
-set wildignore+=*/priv/*,*/deps/*,*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*/doc/*,*/target/*
+set wildignore+=*/deps/*,*/priv/*,*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*/doc/*,*/target/*
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 30
 
