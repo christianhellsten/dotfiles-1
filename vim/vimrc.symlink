@@ -34,13 +34,13 @@ Plugin 'docunext/closetag.vim' " Close HTML and XML tags
 Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
 "Plugin 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
 Plugin 'tpope/vim-fugitive' " Git integration
-Plugin 'scrooloose/nerdtree' " File browser
+"Plugin 'scrooloose/nerdtree' " File browser
 "Plugin 'tpope/vim-haml' " HAML & Sass
 Plugin 'rking/ag.vim' " Silver searcher integration
 Plugin 'nanotech/jellybeans.vim' " Theme
 Plugin 'lsdr/monokai' " Sublimetext's theme
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes' " status and tab styling
+"Plugin 'vim-airline/vim-airline-themes' " status and tab styling
 "Plugin 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
 Plugin 'kien/ctrlp.vim' " File opener
 Plugin 'fatih/vim-go' " Go syntax
@@ -52,10 +52,10 @@ Plugin 'kchmck/vim-coffee-script' " Coffeescript syntax
 "Plugin 'mustache/vim-mustache-handlebars' " Handlebars and mustaches
 
 " Snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
 
 call vundle#end() " required
 
