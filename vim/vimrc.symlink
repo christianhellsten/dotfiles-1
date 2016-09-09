@@ -121,9 +121,9 @@ set scrolloff=6
 nnoremap tn :tabnew<CR>
 nnoremap td :tabclose<CR>
 " Next tab
-"nnoremap <Tab> gt
+nnoremap <Tab> gt
 " Previous tab
-"nnoremap <S-Tab> gT
+nnoremap <S-Tab> gT
 " Go to tab by number
 "noremap <leader>1 1gt
 "noremap <leader>2 2gt
