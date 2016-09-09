@@ -13,6 +13,10 @@ then
 fi
 
 # Install homebrew packages
+# FZF
+brew install fzf
+brew install Caskroom/cask/xquartz
+# FZF END
 brew install tree
 brew install wget
 brew install the_silver_searcher

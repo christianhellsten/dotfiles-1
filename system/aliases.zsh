@@ -1,4 +1,6 @@
 alias ls="ls -larth"
+# Override vim since we can't replace it in OSX (WTF)
+alias vim='/usr/local/bin/vim'
 # What's my IP?
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Recursive grep
@@ -11,8 +13,6 @@ alias ag='ag --pager "less -r"'
 alias netstat-listen='sudo lsof -i -n -P | grep TCP'
 # IOS Simulator
 alias ios-simulator='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
-# TODO
-alias t='todo.sh'
 
 #
 # Ruby dependency hell

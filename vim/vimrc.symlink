@@ -9,55 +9,62 @@
 " ## File opener
 "
 " ctrl+p Open file
-" ctrl+d Toggle between full-path search and filename only search.
-" ctrl+r Toggle between the string mode and full regexp mode.
 "
 "
 set nocompatible
+set term=xterm-256color
+syntax on
 filetype off
 
 " Fix airline-vim performance issues
 set fillchars=diff:·
 set rtp+=~/.vim/bundle/vundle/
 
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" Vundles
-"Plugin 'vim-scripts/SQLUtilities' # Does not do what it says
-Plugin 'gmarik/vundle'
-Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
-" Plugin 'Valloric/YouCompleteMe' " Code completion. Not working.
-Plugin 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
-Plugin 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
-Plugin 'scrooloose/nerdcommenter' " Easy commenting
-Plugin 'docunext/closetag.vim' " Close HTML and XML tags
-Plugin 'tpope/vim-sensible' " Sensible defaults for Vim
-"Plugin 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
-Plugin 'tpope/vim-fugitive' " Git integration
-"Plugin 'scrooloose/nerdtree' " File browser
-"Plugin 'tpope/vim-haml' " HAML & Sass
-Plugin 'rking/ag.vim' " Silver searcher integration
-Plugin 'nanotech/jellybeans.vim' " Theme
-Plugin 'lsdr/monokai' " Sublimetext's theme
-Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes' " status and tab styling
-"Plugin 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
-Plugin 'kien/ctrlp.vim' " File opener
-Plugin 'fatih/vim-go' " Go syntax
-Plugin 'elixir-lang/vim-elixir' " Elixir syntax
-Plugin 'mxw/vim-jsx' " JSX syntax
-Plugin 'slim-template/vim-slim' " Vim syntax
-Plugin 'leafgarland/typescript-vim' " typescript syntax
-Plugin 'kchmck/vim-coffee-script' " Coffeescript syntax
-"Plugin 'mustache/vim-mustache-handlebars' " Handlebars and mustaches
+"Plug 'vim-scripts/SQLUtilities' # Does not do what it says
+" Macvim+fzf requires:
+" $ brew install fzf
+" $ brew install Caskroom/cask/xquartz
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+nnoremap <c-p> :FZF<cr>
+
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'gmarik/vundle'
+Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
+" Plug 'Valloric/YouCompleteMe' " Code completion. Not working.
+Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
+Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
+Plug 'scrooloose/nerdcommenter' " Easy commenting
+Plug 'docunext/closetag.vim' " Close HTML and XML tags
+Plug 'tpope/vim-sensible' " Sensible defaults for Vim
+"Plug 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
+Plug 'tpope/vim-fugitive' " Git integration
+"Plug 'scrooloose/nerdtree' " File browser
+"Plug 'tpope/vim-haml' " HAML & Sass
+Plug 'rking/ag.vim' " Silver searcher integration
+Plug 'nanotech/jellybeans.vim' " Theme
+Plug 'lsdr/monokai' " Sublimetext's theme
+Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes' " status and tab styling
+"Plug 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
+"Plug 'kien/ctrlp.vim' " File opener
+Plug 'fatih/vim-go' " Go syntax
+Plug 'elixir-lang/vim-elixir' " Elixir syntax
+Plug 'mxw/vim-jsx' " JSX syntax
+Plug 'slim-template/vim-slim' " Vim syntax
+Plug 'leafgarland/typescript-vim' " typescript syntax
+Plug 'kchmck/vim-coffee-script' " Coffeescript syntax
+"Plug 'mustache/vim-mustache-handlebars' " Handlebars and mustaches
 
 " Snipmate
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'honza/vim-snippets'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'tomtom/tlib_vim'
+"Plug 'garbas/vim-snipmate'
+"Plug 'honza/vim-snippets'
 
-call vundle#end() " required
+call plug#end()
+
 
 filetype plugin indent on
 
@@ -87,8 +94,8 @@ match OverLength /\%81v.\+/
 
 " Configure ctrl-p
 set wildignore+=*/deps/*,*/priv/*,*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle/*,*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*/doc/*,*/target/*
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_height = 30
+"let g:ctrlp_working_path_mode = 0
+"let g:ctrlp_max_height = 30
 
 " Remove ugly buffer divider
 :set fillchars+=vert:\ 
@@ -114,20 +121,20 @@ set scrolloff=6
 nnoremap tn :tabnew<CR>
 nnoremap td :tabclose<CR>
 " Next tab
-nnoremap <Tab> gt
+"nnoremap <Tab> gt
 " Previous tab
-nnoremap <S-Tab> gT
+"nnoremap <S-Tab> gT
 " Go to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
+"noremap <leader>1 1gt
+"noremap <leader>2 2gt
+"noremap <leader>3 3gt
+"noremap <leader>4 4gt
+"noremap <leader>5 5gt
+"noremap <leader>6 6gt
+"noremap <leader>7 7gt
+"noremap <leader>8 8gt
+"noremap <leader>9 9gt
+"noremap <leader>0 :tablast<cr>
 nnoremap <D-f> :Ag
 " NERDTree = ctrl-n
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>

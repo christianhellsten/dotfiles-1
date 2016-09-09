@@ -12,6 +12,12 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export GOPATH="$HOME/projects/golang"
 export PATH="$GOPATH/bin:$PATH"
 
+# No duplicates in history
+export HISTCONTROL=ignoreboth:erasedups
+
+# Tell fzf to use ag and respect .gitignore
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 # Fix readline on OSX, see e.g.:
 # https://github.com/guard/guard/wiki/Add-Readline-support-to-Ruby-on-Mac-OS-X
 RUBY_CONFIGURE_OPTS='--with-readline-dir=`brew --prefix readline`'
