@@ -12,7 +12,6 @@
 "
 "
 set nocompatible
-set term=xterm-256color
 syntax on
 filetype off
 
@@ -46,7 +45,7 @@ Plug 'rking/ag.vim' " Silver searcher integration
 Plug 'nanotech/jellybeans.vim' " Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes' " status and tab styling
+Plug 'vim-airline/vim-airline-themes' " status and tab styling
 "Plug 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
 "Plug 'kien/ctrlp.vim' " File opener
 Plug 'fatih/vim-go' " Go syntax
