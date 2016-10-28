@@ -19,6 +19,11 @@ filetype off
 set fillchars=diff:·
 set rtp+=~/.vim/bundle/vundle/
 
+" Remind me to use jk instead of ESC
+"inoremap  :echoe "use jk"
+inoremap <esc> <nop>
+inoremap jk <esc>
+
 call plug#begin('~/.vim/plugged')
 
 "Plug 'vim-scripts/SQLUtilities' # Does not do what it says
