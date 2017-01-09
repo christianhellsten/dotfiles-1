@@ -17,10 +17,10 @@ alias ios-simulator='open /Applications/Xcode.app/Contents/Developer/Application
 #
 # Ruby dependency hell
 #
-alias cucumber='bundle exec cucumber'
-alias rspec='bundle exec rspec'
-alias rake='bundle exec rake'
-alias rails='bundle exec rails'
+#alias cucumber='bundle exec cucumber'
+#alias rspec='bundle exec rspec'
+#alias rake='bundle exec rake'
+#alias rails='bundle exec rails'
 
 #alias l="ls -lAh --color"
 #alias ll="ls -l --color"

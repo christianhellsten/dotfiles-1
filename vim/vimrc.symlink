@@ -43,6 +43,7 @@ Plug 'tpope/vim-fugitive' " Git integration
 "Plug 'tpope/vim-haml' " HAML & Sass
 Plug 'rking/ag.vim' " Silver searcher integration
 Plug 'nanotech/jellybeans.vim' " Theme
+Plug 'morhetz/gruvbox' "Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
@@ -225,3 +226,11 @@ command! PrettyJSON call DoPrettyJSON()
 " Copy to OSX clipboard when yanking
 "
 set clipboard=unnamed
+
+
+"
+" Tabs to spaces etc, LOL.
+"
+"autocmd Filetype html setlocal ts=2 sw=2 expandtab
+"autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+"autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab

@@ -1,6 +1,15 @@
 export LC_ALL=en_US.UTF-8
 
+
+# == History (not fucking working)
+setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
+setopt inc_append_history # Add comamnds as they are typed, don't wait until shell exit
+setopt hist_expire_dups_first # when trimming history, lose oldest duplicates first
+setopt share_history # imports new commands and appends typed commands to history
+setopt hist_verify # don't execute, just expand history
+
 # shortcut to this dotfiles path is $ZSH
+#
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
