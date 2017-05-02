@@ -10,7 +10,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # Go
 export GOPATH="$HOME/projects/golang"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="./bin:$GOPATH/bin:$PATH"
 
 # No duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
