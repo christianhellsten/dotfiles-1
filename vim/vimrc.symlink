@@ -21,6 +21,7 @@ set nu
 set fillchars=diff:·
 set rtp+=~/.vim/bundle/vundle/
 
+" NOTE: stupid rule:
 " Remind me to use jk instead of ESC
 "inoremap  :echoe "use jk"
 "inoremap <esc> <nop>
@@ -50,6 +51,7 @@ Plug 'tpope/vim-fugitive' " Git integration
 "Plug 'tpope/vim-haml' " HAML & Sass
 Plug 'rking/ag.vim' " Silver searcher integration
 Plug 'nanotech/jellybeans.vim' " Theme
+Plug 'morhetz/gruvbox' "Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
@@ -239,3 +241,10 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+
+"
+" Tabs to spaces etc, LOL.
+"
+"autocmd Filetype html setlocal ts=2 sw=2 expandtab
+"autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+"autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
