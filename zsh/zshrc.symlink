@@ -41,6 +41,7 @@ done
 
 # NOTE: hack to get path right
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 
 unset config_files
 
@@ -50,3 +51,17 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/Christian/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/Christian/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/Christian/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/Christian/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

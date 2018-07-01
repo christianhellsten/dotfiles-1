@@ -14,6 +14,8 @@
 set nocompatible
 syntax on
 filetype off
+" show line numbers
+set nu
 
 " Fix airline-vim performance issues
 set fillchars=diff:·
@@ -21,8 +23,8 @@ set rtp+=~/.vim/bundle/vundle/
 
 " Remind me to use jk instead of ESC
 "inoremap  :echoe "use jk"
-inoremap <esc> <nop>
-inoremap jk <esc>
+"inoremap <esc> <nop>
+"inoremap jk <esc>
 
 call plug#begin('~/.vim/plugged')
 
@@ -34,11 +36,11 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 nnoremap <c-p> :FZF<cr>
 
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'janko-m/vim-test'
 Plug 'gmarik/vundle'
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 " Plug 'Valloric/YouCompleteMe' " Code completion. Not working.
 Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
-Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 Plug 'scrooloose/nerdcommenter' " Easy commenting
 Plug 'docunext/closetag.vim' " Close HTML and XML tags
 Plug 'tpope/vim-sensible' " Sensible defaults for Vim
@@ -51,14 +53,20 @@ Plug 'nanotech/jellybeans.vim' " Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
+Plug 'w0rp/ale'
 "Plug 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
+"Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
+"Plug 'rhysd/vim-crystal' " Crystal syntax highlighting
 "Plug 'kien/ctrlp.vim' " File opener
-Plug 'fatih/vim-go' " Go syntax
-Plug 'elixir-lang/vim-elixir' " Elixir syntax
-Plug 'mxw/vim-jsx' " JSX syntax
-Plug 'slim-template/vim-slim' " Vim syntax
-Plug 'leafgarland/typescript-vim' " typescript syntax
-Plug 'kchmck/vim-coffee-script' " Coffeescript syntax
+"Plug 'fatih/vim-go' " Go syntax
+"Plug 'elixir-lang/vim-elixir' " Elixir syntax
+"Plug 'mxw/vim-jsx' " JSX syntax
+"Plug 'slim-template/vim-slim' " Vim syntax
+"Plug 'leafgarland/typescript-vim' " typescript syntax
+"Plug 'kchmck/vim-coffee-script' " Coffeescript syntax
+Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
+
+
 "Plug 'mustache/vim-mustache-handlebars' " Handlebars and mustaches
 
 " Snipmate
@@ -79,12 +87,6 @@ let mapleader=","
 color jellybeans
 "colorscheme molokai
 "colorscheme vibrantink
-
-" Configure tabs and spaces
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
 
 " Persistent undo will save us one day...
 set undofile
@@ -230,3 +232,10 @@ command! PrettyJSON call DoPrettyJSON()
 " Copy to OSX clipboard when yanking
 "
 set clipboard=unnamed
+
+" Configure tabs and spaces
+" http://stackoverflow.com/questions/8903103/how-can-i-find-out-why-vim-keeps-changing-my-expandtab-setting
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
