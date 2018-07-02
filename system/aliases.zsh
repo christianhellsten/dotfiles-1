@@ -1,6 +1,7 @@
 alias ls="ls -larth"
 # Override vim since we can't replace it in OSX (WTF)
-alias vim='/usr/local/bin/vim'
+#alias vim='/usr/local/bin/vim'
+alias vim='/usr/local/bin/nvim'
 # What's my IP?
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Recursive grep

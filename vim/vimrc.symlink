@@ -29,33 +29,33 @@ set rtp+=~/.vim/bundle/vundle/
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'vim-scripts/SQLUtilities' # Does not do what it says
 " Macvim+fzf requires:
 " $ brew install fzf
 " $ brew install Caskroom/cask/xquartz
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 nnoremap <c-p> :FZF<cr>
-
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'janko-m/vim-test'
 Plug 'gmarik/vundle'
+Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
-" Plug 'Valloric/YouCompleteMe' " Code completion. Not working.
-Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 Plug 'scrooloose/nerdcommenter' " Easy commenting
-Plug 'docunext/closetag.vim' " Close HTML and XML tags
 Plug 'tpope/vim-sensible' " Sensible defaults for Vim
-"Plug 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
 Plug 'tpope/vim-fugitive' " Git integration
-"Plug 'scrooloose/nerdtree' " File browser
-"Plug 'tpope/vim-haml' " HAML & Sass
 Plug 'rking/ag.vim' " Silver searcher integration
 Plug 'nanotech/jellybeans.vim' " Theme
 Plug 'morhetz/gruvbox' "Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
-Plug 'w0rp/ale'
+Plug 'w0rp/ale' " Asynchronous Lint Engine
+
+" Disabled plugins
+"Plug 'vim-scripts/SQLUtilities' # Does not do what it says
+"Plug 'Valloric/YouCompleteMe' " Code completion. Not working.
+"Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
+"Plug 'docunext/closetag.vim' " Close HTML and XML tags
+"Plug 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
+"Plug 'scrooloose/nerdtree' " File browser
+"Plug 'tpope/vim-haml' " HAML & Sass
 "Plug 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
 "Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 "Plug 'rhysd/vim-crystal' " Crystal syntax highlighting
