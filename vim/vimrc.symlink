@@ -36,6 +36,9 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 nnoremap <c-p> :FZF<cr>
 Plug 'gmarik/vundle'
 Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub
+nnoremap t<c-n> :TestNearest<cr>
+nnoremap t<c-l> :TestLast<cr>
+nnoremap t<c-f> :TestFile<cr>
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plug 'scrooloose/nerdcommenter' " Easy commenting
 Plug 'tpope/vim-sensible' " Sensible defaults for Vim
@@ -47,11 +50,12 @@ Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
 Plug 'w0rp/ale' " Asynchronous Lint Engine
+Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
+Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 
 " Disabled plugins
 "Plug 'vim-scripts/SQLUtilities' # Does not do what it says
 "Plug 'Valloric/YouCompleteMe' " Code completion. Not working.
-"Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 "Plug 'docunext/closetag.vim' " Close HTML and XML tags
 "Plug 'tpope/vim-surround' " Surround text. Doesn't work with ctrlp.
 "Plug 'scrooloose/nerdtree' " File browser
@@ -66,7 +70,6 @@ Plug 'w0rp/ale' " Asynchronous Lint Engine
 "Plug 'slim-template/vim-slim' " Vim syntax
 "Plug 'leafgarland/typescript-vim' " typescript syntax
 "Plug 'kchmck/vim-coffee-script' " Coffeescript syntax
-Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 
 
 "Plug 'mustache/vim-mustache-handlebars' " Handlebars and mustaches
@@ -145,7 +148,7 @@ nnoremap <S-Tab> gT
 "noremap <leader>0 :tablast<cr>
 nnoremap <D-f> :Ag
 " NERDTree = ctrl-n
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+"nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Show 'weird' characters, e.g. encoded space
 set list
