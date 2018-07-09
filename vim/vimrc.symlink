@@ -89,7 +89,11 @@ let mapleader=","
 
 """"""""""""""""""""""""""""
 
-color jellybeans
+set termguicolors " true color support required by e.g. gruvbox
+
+colorscheme gruvbox
+set background=dark    " Use dark gruvbox mode
+"colorscheme jellybeans
 "colorscheme molokai
 "colorscheme vibrantink
 
