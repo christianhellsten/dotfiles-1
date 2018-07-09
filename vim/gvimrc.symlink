@@ -1,6 +1,6 @@
 set fuopt=maxvert,maxhorz
 
-colorscheme monokai
+colorscheme gruvbox
 
 " Position and maximize window
 :winpos 0 0 " Center window
