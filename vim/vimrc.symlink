@@ -50,6 +50,8 @@ Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
 Plug 'w0rp/ale' " Asynchronous Lint Engine
+Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
+Plug 'fatih/vim-go' " Go syntax
 Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 
@@ -61,10 +63,8 @@ Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 "Plug 'scrooloose/nerdtree' " File browser
 "Plug 'tpope/vim-haml' " HAML & Sass
 "Plug 'scrooloose/syntastic' " Syntax highlighting (slow bastard)
-"Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 "Plug 'rhysd/vim-crystal' " Crystal syntax highlighting
 "Plug 'kien/ctrlp.vim' " File opener
-"Plug 'fatih/vim-go' " Go syntax
 "Plug 'elixir-lang/vim-elixir' " Elixir syntax
 "Plug 'mxw/vim-jsx' " JSX syntax
 "Plug 'slim-template/vim-slim' " Vim syntax
