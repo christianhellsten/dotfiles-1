@@ -39,6 +39,7 @@ Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub
 nnoremap t<c-n> :TestNearest<cr>
 nnoremap t<c-l> :TestLast<cr>
 nnoremap t<c-f> :TestFile<cr>
+Plug 'pearofducks/ansible-vim'
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plug 'scrooloose/nerdcommenter' " Easy commenting
 Plug 'tpope/vim-sensible' " Sensible defaults for Vim
