@@ -4,7 +4,7 @@ colorscheme gruvbox
 
 " Position and maximize window
 :winpos 0 0 " Center window
-vsplit " Split window vertically
+" vsplit " Split window vertically
 "wincmd l  " Move to right window
 "split     " Split window horizontally
 

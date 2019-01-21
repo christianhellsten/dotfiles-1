@@ -55,6 +55,8 @@ Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocomple
 Plug 'fatih/vim-go' " Go syntax
 Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
+Plug 'posva/vim-vue' " Vue.js
+Plug 'leafgarland/typescript-vim' " TypeScript
 
 " Disabled plugins
 "Plug 'vim-scripts/SQLUtilities' # Does not do what it says
