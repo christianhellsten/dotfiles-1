@@ -14,7 +14,7 @@ setopt HIST_VERIFY # don't execute, just expand history
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/projects
+export PROJECTS=~/Documents/projects
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -78,5 +78,5 @@ if [ -f '/Users/Christian/Downloads/google-cloud-sdk/path.zsh.inc' ]; then sourc
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/Christian/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/Christian/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
+export PATH="/usr/local/opt/libpq/bin:$PATH"
