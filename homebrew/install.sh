@@ -13,6 +13,9 @@ then
 fi
 
 # Install homebrew packages
+
+# Pager for Postgres
+brew install pgpg
 # FZF
 brew install fzf
 brew install Caskroom/cask/xquartz
