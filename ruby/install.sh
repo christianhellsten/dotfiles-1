@@ -12,13 +12,13 @@ then
   brew install ruby-build > /tmp/ruby-build-install.log
 fi
 
-rbenv install 2.1.7
-rbenv global 2.1.7
+rbenv install 2.6.3
+rbenv global 2.6.3
 
 # Install gems
 gem install bundler
 gem install rake
-gem install rubygems-bundler # no more bundle exec crap
-gem regenerate_binstubs
+#gem install rubygems-bundler # no more bundle exec crap
+#gem regenerate_binstubs
 
 rbenv rehash

@@ -19,7 +19,6 @@ set nu
 
 " Fix airline-vim performance issues
 set fillchars=diff:·
-set rtp+=~/.vim/bundle/vundle/
 
 " NOTE: stupid rule:
 " Remind me to use jk instead of ESC
@@ -34,7 +33,6 @@ call plug#begin('~/.vim/plugged')
 " $ brew install Caskroom/cask/xquartz
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 nnoremap <c-p> :FZF<cr>
-Plug 'gmarik/vundle'
 Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub
 nnoremap t<c-n> :TestNearest<cr>
 nnoremap t<c-l> :TestLast<cr>
