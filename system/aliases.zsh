@@ -1,4 +1,4 @@
-alias ls="ls -larth"
+alias ls="ls -lah"
 # Override vim since we can't replace it in OSX (WTF)
 #alias vim='/usr/local/bin/vim'
 alias vim='/usr/local/bin/nvim'
