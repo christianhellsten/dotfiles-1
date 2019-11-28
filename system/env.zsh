@@ -9,7 +9,7 @@ export PATH=~/bin:$PATH
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # Go
-export GOPATH="$HOME/projects/golang"
+# export GOPATH="$HOME/Documents/projects/golang"
 export PATH="./bin:$GOPATH/bin:$PATH"
 
 # No duplicates in history

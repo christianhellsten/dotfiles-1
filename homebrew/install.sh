@@ -13,17 +13,20 @@ then
 fi
 
 # Install homebrew packages
+brew install caskroom/cask/brew-cask
 # FZF
 brew install fzf
 brew install Caskroom/cask/xquartz
 # FZF END
+# STARSHIP
+brew install starship
+brew install caskroom/fonts/font-fira-code
+# STARSHIP END
 brew install tree
 brew install wget
 brew install the_silver_searcher
 brew install zsh
-#brew install ack
-brew install macvim
-brew install caskroom/cask/brew-cask
+brew install nvim
 
 # Setup casks
 brew tap phinze/cask
