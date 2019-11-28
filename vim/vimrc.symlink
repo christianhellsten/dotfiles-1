@@ -17,6 +17,9 @@ filetype off
 " show line numbers
 set nu
 
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Fix airline-vim performance issues
 set fillchars=diff:·
 
@@ -37,6 +40,7 @@ Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub
 nnoremap t<c-n> :TestNearest<cr>
 nnoremap t<c-l> :TestLast<cr>
 nnoremap t<c-f> :TestFile<cr>
+Plug 'jceb/vim-orgmode'
 Plug 'pearofducks/ansible-vim'
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plug 'scrooloose/nerdcommenter' " Easy commenting

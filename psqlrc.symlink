@@ -1,13 +1,17 @@
 \set QUIET 1
 -- formatting
-\x auto
+--\x auto
+
+\setenv PAGER pspg
+\pset border 2
+\pset linestyle unicode<Paste>
 
 \set VERBOSITY verbose
 \set ON_ERROR_ROLLBACK interactive
 -- show execution times
 \timing
 -- limit paging
-\pset pager off
+--\pset pager off
 -- replace nulls
 \pset null ¤
 \pset linestyle unicode
