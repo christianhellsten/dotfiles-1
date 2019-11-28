@@ -12,10 +12,9 @@ then
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" > /tmp/homebrew-install.log
 fi
 
-# Install homebrew packages
-brew install caskroom/cask/brew-cask
-# Pager for Postgres
-brew install pgpg
+brew install caskroom/cask/brew-cask # Install homebrew packages
+brew install overmind # Procfile
+brew install pgpg # Pager for Postgres
 # FZF
 brew install fzf
 brew install Caskroom/cask/xquartz
