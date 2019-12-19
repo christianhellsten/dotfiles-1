@@ -19,6 +19,8 @@ brew install pgpg # Pager for Postgres
 brew install fzf
 brew install Caskroom/cask/xquartz
 # FZF END
+# TLDR for man pages
+brew install isacikgoz/taps/tldr
 # STARSHIP
 brew install starship
 brew install caskroom/fonts/font-fira-code
@@ -34,9 +36,10 @@ brew tap phinze/cask
 brew tap caskroom/versions
 brew tap caskroom/fonts
 
-# Install prågrams
-#brew cask install dash
-#brew cask install google-chrome
+# Spyware:
+# brew cask install google-chrome
+# Install prågramms
+brew cask install firefox
 brew cask install vlc
 
 # Install fonts

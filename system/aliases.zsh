@@ -14,6 +14,12 @@ alias ag='ag --pager "less -r"'
 alias netstat-listen='sudo lsof -i -n -P | grep TCP'
 # IOS Simulator
 alias ios-simulator='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
+# Cleans the shit D-ocker leaves behind
+alias docker-clean=' \
+  docker container prune -f ; \
+  docker image prune -f ; \
+  docker network prune -f ; \
+  docker volume prune -f '
 
 #
 # Ruby dependency hell
