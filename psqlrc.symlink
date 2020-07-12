@@ -4,7 +4,7 @@
 
 \setenv PAGER pspg
 \pset border 2
-\pset linestyle unicode<Paste>
+\pset linestyle unicode
 
 \set VERBOSITY verbose
 \set ON_ERROR_ROLLBACK interactive

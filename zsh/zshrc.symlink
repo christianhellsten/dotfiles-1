@@ -52,7 +52,11 @@ eval "$(starship init zsh)"
 
 unset config_files
 
+ulimit -Sn 4096      # Increase open files.
+ulimit -Sl unlimited # Increase max locked memory.
+
 export GOPATH=$HOME/Documents/projects/golang
+export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -61,3 +65,4 @@ export PATH="$HOME/.yarn/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/libpq/bin:$PATH"
