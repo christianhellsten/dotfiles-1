@@ -1,6 +1,6 @@
+set -e
+
 export LC_ALL=en_US.UTF-8
-
-
 
 # plugins=(... dotenv)
 
@@ -45,9 +45,9 @@ do
 done
 
 eval "$(rbenv init -)"
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 # direnv for .env files
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 unset config_files

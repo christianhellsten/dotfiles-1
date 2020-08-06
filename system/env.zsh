@@ -6,7 +6,7 @@ export EDITOR='vim'
 export PATH=~/bin:$PATH
 
 # Legacy stuff, LOL
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home -v 14`
 
 # Go
 export GOPATH="$HOME/Documents/projects/golang"
