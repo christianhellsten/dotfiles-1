@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if test ! $(which rbenv)
 then
   echo "  Installing rbenv for you."
@@ -16,8 +18,8 @@ rbenv install 2.6.3
 rbenv global 2.6.3
 
 # Install gems
-gem install bundler
-gem install rake
+# gem install bundler
+# gem install rake
 #gem install rubygems-bundler # no more bundle exec crap
 #gem regenerate_binstubs
 

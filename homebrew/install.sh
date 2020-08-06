@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 #
 # Homebrew
 #
@@ -12,39 +13,41 @@ then
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" > /tmp/homebrew-install.log
 fi
 
-brew install caskroom/cask/brew-cask # Install homebrew packages
-brew install overmind # Procfile
-brew install pgpg # Pager for Postgres
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+brew install overmind || true # Procfile
+brew install pspg || true # Pager for Postgres
 # FZF
-brew install fzf
-brew install Caskroom/cask/xquartz
+brew install fzf || true
+brew install Caskroom/cask/xquartz || true
 # FZF END
 # TLDR for man pages
-brew install isacikgoz/taps/tldr
+brew install isacikgoz/taps/tldr || true
 # STARSHIP
-brew install starship
-brew install caskroom/fonts/font-fira-code
+brew install starship || true
+brew install homebrew/cask-fonts/font-fira-code || true
 # STARSHIP END
-brew install tree
-brew install wget
-brew install the_silver_searcher
-brew install zsh
-brew install nvim
+brew install tree || true
+brew install repren || true # rename anything
+brew install wget || true
+brew install the_silver_searcher || true # ag
+brew install zsh || true
+brew install nvim || true
 
 # Setup casks
 brew tap phinze/cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 
 # Spyware:
 # brew cask install google-chrome
 # Install prågramms
-brew cask install firefox
-brew cask install vlc
+brew cask install firefox || true
+brew cask install vlc || true
 
 # Install fonts
 brew cask install font-source-code-pro
-brew cask install font-fira-sans
+brew cask install homebrew/cask-fonts/font-fira-sans
 
 # Yes, cleanup
 brew cleanup
