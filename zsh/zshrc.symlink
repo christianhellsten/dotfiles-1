@@ -10,7 +10,7 @@ export LC_ALL=en_US.UTF-8
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/projects
+export PROJECTS=~/Documents/projects
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -55,12 +55,13 @@ export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$HOME/Library/Python/2.7/bin # Jupyter, etc.
+# export PATH=$PATH:$HOME/Library/Python/2.7/bin # Jupyter, etc.
+# export PATH="/usr/local/opt/postgresql@11/bin:$PATH" # Put Postgres 11 first in path
 export PATH="$HOME/.yarn/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+# export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
