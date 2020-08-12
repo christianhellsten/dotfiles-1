@@ -55,13 +55,10 @@ export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-# export PATH=$PATH:$HOME/Library/Python/2.7/bin # Jupyter, etc.
-# export PATH="/usr/local/opt/postgresql@11/bin:$PATH" # Put Postgres 11 first in path
 export PATH="$HOME/.yarn/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

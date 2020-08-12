@@ -33,7 +33,6 @@ call plug#begin('~/.vim/plugged')
 
 " Macvim+fzf requires:
 " $ brew install fzf
-" $ brew install Caskroom/cask/xquartz
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 nnoremap <c-p> :FZF<cr>
 Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub

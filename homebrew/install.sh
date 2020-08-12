@@ -16,10 +16,8 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 brew install overmind || true # Procfile
-brew install pspg || true # Pager for Postgres
 # FZF
 brew install fzf || true
-brew install Caskroom/cask/xquartz || true
 # FZF END
 # TLDR for man pages
 brew install isacikgoz/taps/tldr || true
@@ -36,7 +34,6 @@ brew install nvim || true
 brew install direnv || true # .envrc loader
 
 # Setup casks
-brew tap phinze/cask
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
 
