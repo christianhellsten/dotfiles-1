@@ -9,6 +9,6 @@ setopt HIST_EXPIRE_DUPS_FIRST # when trimming history, lose oldest duplicates fi
 setopt SHARE_HISTORY # imports new commands and appends typed commands to history
 setopt HIST_VERIFY # don't execute, just expand history
 setopt EXTENDED_HISTORY # add timestamps to history
-setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+setopt INC_APPEND_HISTORY # adds history incrementally
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
