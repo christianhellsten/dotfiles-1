@@ -1,4 +1,5 @@
-set -e
+# NOTE: Don't enable this. It will crash zshrc...
+# set -e
 
 export LC_ALL=en_US.UTF-8
 
@@ -44,12 +45,6 @@ do
   source $file
 done
 
-eval "$(rbenv init -)"
-# eval "$(pyenv init -)"
-# direnv for .env files
-# eval "$(direnv hook zsh)"
-eval "$(starship init zsh)"
-
 unset config_files
 
 ulimit -Sn 4096      # Increase open files.
@@ -66,3 +61,11 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+eval "$(starship init zsh)"
+eval "$(rbenv init -)"
+# eval "$(pyenv init -)"
+# direnv for .env files
+eval "$(direnv hook zsh)"

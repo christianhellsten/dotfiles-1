@@ -33,6 +33,7 @@ brew install wget || true
 brew install the_silver_searcher || true # ag
 brew install zsh || true
 brew install nvim || true
+brew install direnv || true # .envrc loader
 
 # Setup casks
 brew tap phinze/cask
@@ -46,8 +47,7 @@ brew cask install firefox || true
 brew cask install vlc || true
 
 # Install fonts
-brew cask install font-source-code-pro
-brew cask install homebrew/cask-fonts/font-fira-sans
+brew cask install font-fira-code font-fira-sans font-hack-nerd-font font-source-code-pro
 
 # Yes, cleanup
 brew cleanup
