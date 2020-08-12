@@ -20,6 +20,8 @@ alias docker-clean=' \
   docker image prune -f ; \
   docker network prune -f ; \
   docker volume prune -f '
+alias start-postgres='nohup postgres -D /usr/local/var/postgres/ > /tmp/postgres.log &'
+alias stop-postgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 #
 # Ruby dependency hell

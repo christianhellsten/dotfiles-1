@@ -1,4 +1,4 @@
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # No "bundle exec". Requires Rubygems 2.2. Crap doesn't work...
 # export RUBYGEMS_GEMDEPS=-
