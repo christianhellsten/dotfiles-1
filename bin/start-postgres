@@ -1,4 +1,0 @@
-#
-# Starts postgres in the background
-#
-nohup postgres -D /usr/local/var/postgres/ > /tmp/postgres.log &
