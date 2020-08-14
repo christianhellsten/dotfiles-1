@@ -1,0 +1,14 @@
+/*
+  Convert non-breaking space (option+space) to regular space.
+
+  Key Modifiers:
+
+  ^ : Ctrl
+  $ : Shift
+  ~ : Option (Alt)
+  @ : Command (Apple)
+  # : Numeric Keypad
+*/
+{
+"~ " = ("insertText:", " ");
+}
