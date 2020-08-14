@@ -8,6 +8,8 @@
   ~ : Option (Alt)
   @ : Command (Apple)
   # : Numeric Keypad
+
+  See http://osxnotes.net/keybindings.html
 */
 {
 "~ " = ("insertText:", " ");
