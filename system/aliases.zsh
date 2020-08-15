@@ -4,6 +4,7 @@ alias ls="ls -lah"
 alias vim='/usr/local/bin/nvim'
 # What's my IP?
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ipaddr='wanip && ipconfig getifaddr en1'
 # Recursive grep
 alias rgrep="grep -r"
 # Fix ack
@@ -11,7 +12,7 @@ alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
 # Silver searcher pager!!!
 alias ag='ag --pager "less -r"'
 # OSX version of: sudo netstat | grep LISTEN
-alias netstat-listen='sudo lsof -i -n -P | grep TCP'
+alias netstat-listen='lsof -iTCP -sTCP:LISTEN'
 # IOS Simulator
 alias ios-simulator='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
 # Cleans the shit D-ocker leaves behind
