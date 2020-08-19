@@ -1,2 +1,2 @@
-brew cask install java
+brew install openjdk
 brew install maven
