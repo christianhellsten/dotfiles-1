@@ -67,3 +67,5 @@ eval "$(rbenv init -)"
 # eval "$(pyenv init -)"
 # direnv for .env files
 eval "$(direnv hook zsh)"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
