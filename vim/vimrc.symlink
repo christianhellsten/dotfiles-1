@@ -51,8 +51,9 @@ Plug 'morhetz/gruvbox' "Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
-Plug 'w0rp/ale' " Asynchronous Lint Engine
+Plug 'dense-analysis/ale' " Asynchronous Lint Engine
 Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Make your Vim/Neovim as smart as VSCode
 Plug 'fatih/vim-go' " Go syntax
 Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
