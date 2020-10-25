@@ -17,8 +17,16 @@ filetype off
 " show line numbers
 set nu
 
+" Force vim to use python3
+if has('python3')
+endif
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
+" Fix Python files with autopep8 and yapf.
+let b:ale_fixers = ['autopep8', 'yapf']
+" Check Python files with flake8 and pylint.
+let b:ale_linters = ['flake8', 'pylint']
+
 
 " Fix airline-vim performance issues
 set fillchars=diff:·
