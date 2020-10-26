@@ -1,16 +1,19 @@
 alias ls="ls -lah"
-# Override vim since we can't replace it in OSX (WTF)
-#alias vim='/usr/local/bin/vim'
 alias vim='/usr/local/bin/nvim'
+alias vi='/usr/local/bin/nvim'
 # What's my IP?
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ipaddr='wanip && ipconfig getifaddr en1'
 # Recursive grep
 alias rgrep="grep -r"
+alias rt="bundle exec rails test"
+alias rs="bundle exec rspec"
+alias be="bundle exec"
 # Fix ack
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
 # Silver searcher pager!!!
 alias ag='ag --pager "less -r"'
+alias search-replace='find "${PATH}" -type f -name "${NAME}" -print0 | xargs -0 sed -i "" -e "s/${SEARCH}/${REPLACE}/g"'
 # OSX version of: sudo netstat | grep LISTEN
 alias netstat-listen='lsof -iTCP -sTCP:LISTEN'
 # IOS Simulator
