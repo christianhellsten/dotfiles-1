@@ -11,6 +11,7 @@ alias rs="bundle exec rspec"
 alias be="bundle exec"
 # Fix ack
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
+alias less='less -r'
 # Silver searcher pager!!!
 alias ag='ag --pager "less -r"'
 alias search-replace='find "${PATH}" -type f -name "${NAME}" -print0 | xargs -0 sed -i "" -e "s/${SEARCH}/${REPLACE}/g"'
