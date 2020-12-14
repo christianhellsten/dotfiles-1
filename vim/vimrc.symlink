@@ -16,6 +16,8 @@ syntax on
 filetype off
 " show line numbers
 set nu
+" no new line at end-of-file!
+set noeol
 
 " Force vim to use python3
 if has('python3')
