@@ -52,6 +52,7 @@ unset config_files
 ulimit -Sn 4096      # Increase open files.
 ulimit -Sl unlimited # Increase max locked memory.
 
+export THOR_MERGE=vimdiff
 export GOPATH=$HOME/Documents/projects/golang
 export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/opt/go/libexec
@@ -71,3 +72,21 @@ eval "$(rbenv init -)"
 eval "$(direnv hook zsh)"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/christian/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/christian/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/Users/christian/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/christian/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+

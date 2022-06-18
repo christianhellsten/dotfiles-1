@@ -28,7 +28,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let b:ale_fixers = ['autopep8', 'yapf']
 " Check Python files with flake8 and pylint.
 let b:ale_linters = ['flake8', 'pylint']
-
+" CSV plugin does not work
+let g:polyglot_disabled = ['csv']
 
 " Fix airline-vim performance issues
 set fillchars=diff:·
@@ -49,6 +50,11 @@ Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub
 nnoremap t<c-n> :TestNearest<cr>
 nnoremap t<c-l> :TestLast<cr>
 nnoremap t<c-f> :TestFile<cr>
+
+Plug 'nvim-lua/plenary.nvim' " All the lua functions I don't want to write twice
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim' " Show me troubles
+Plug 'jose-elias-alvarez/null-ls.nvim' " vale for writers
 Plug 'jceb/vim-orgmode'
 Plug 'pearofducks/ansible-vim'
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
@@ -270,3 +276,19 @@ set expandtab
 "autocmd Filetype html setlocal ts=2 sw=2 expandtab
 "autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 "autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+"
+"
+"
+
+lua << EOF
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+  require("null-ls").setup({
+      sources = {
+          require("null-ls").builtins.diagnostics.vale,
+      },
+  })
+EOF
