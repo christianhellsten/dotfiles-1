@@ -1,4 +1,5 @@
-brew install pipenv
+# brew install pipenv
+asdf install python
 # VIM start
 pip3 install pylint
 pip3 install flake8

@@ -1,5 +1,5 @@
-brew install postgresql@11 || true
+brew install postgresql@12 || true
 brew install pspg || true # Pager for psql
 
 # Fix gem install pg
-brew link postgresql@11 --force
+brew link postgresql@12 --force

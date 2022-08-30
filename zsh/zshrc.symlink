@@ -59,6 +59,7 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -66,12 +67,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(starship init zsh)"
-eval "$(rbenv init -)"
-# eval "$(pyenv init -)"
 # direnv for .env files
 eval "$(direnv hook zsh)"
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
 export PATH="/usr/local/opt/node@14/bin:$PATH"
 
 # >>> conda initialize >>>
@@ -89,4 +87,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

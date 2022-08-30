@@ -34,17 +34,18 @@ brew install nvim || true
 brew install direnv || true # .envrc loader
 
 # Setup casks
-brew tap homebrew/cask-versions
-brew tap homebrew/cask-fonts
+#brew tap homebrew/cask-versions
+#brew tap homebrew/cask-fonts
 
 # Spyware:
 # brew cask install google-chrome
 # Install prågramms
-brew cask install firefox || true
-brew cask install vlc || true
+brew install --cask firefox || true
+brew install --cask vlc || true
 
-# Install fonts
-brew cask install font-fira-code font-fira-sans font-hack-nerd-font font-source-code-pro
+# Install fonts (svn needed)
+brew install svn
+brew install --cask font-fira-code font-fira-sans font-hack-nerd-font font-source-code-pro
 
 # Yes, cleanup
 brew cleanup
