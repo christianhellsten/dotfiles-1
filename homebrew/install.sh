@@ -34,8 +34,6 @@ brew install nvim || true
 brew install direnv || true # .envrc loader
 
 # Setup casks
-#brew tap homebrew/cask-versions
-#brew tap homebrew/cask-fonts
 
 # Spyware:
 # brew cask install google-chrome

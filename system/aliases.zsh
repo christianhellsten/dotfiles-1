@@ -1,4 +1,6 @@
 alias ls="ls -lah"
+alias docker="podman"
+alias docker-compose="podman-compose"
 alias vim='/opt/homebrew/bin/nvim'
 alias vi='/opt/homebrew/bin/nvim'
 # What's my IP?
@@ -27,17 +29,3 @@ alias docker-clean=' \
   docker volume prune -f '
 alias start-postgres='nohup /opt/homebrew/opt/postgresql@12/bin/postgres -D /opt/homebrew/var/postgresql@12 > /tmp/postgres.log &'
 alias stop-postgres='pg_ctl -D /opt/homebrew/opt/postgresql@12/bin/postgres stop -s -m fast'
-
-#
-# Ruby dependency hell
-#
-#alias cucumber='bundle exec cucumber'
-#alias rspec='bundle exec rspec'
-#alias rake='bundle exec rake'
-#alias rails='bundle exec rails'
-
-#alias l="ls -lAh --color"
-#alias ll="ls -l --color"
-#alias la='ls -A --color'
-#alias ack=ack-grep
-
