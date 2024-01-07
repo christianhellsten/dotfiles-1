@@ -24,6 +24,8 @@ if has('python3')
 endif
 " let g:python2_host_prog = '/opt/homebrew/bin/python2'
 let g:python3_host_prog = '/opt/homebrew/bin/python3'
+" let g:python2_host_prog = '/usr/local/bin/python'
+" let g:python3_host_prog = '/usr/local/bin/python3'
 let g:ale_linters = {
       \  'python': ['ruff'],
       \  'css': ['stylelint'],
@@ -61,10 +63,7 @@ nnoremap t<c-f> :TestFile<cr>
 Plug 'ruby-formatter/rufo-vim'
 Plug 'nvim-lua/plenary.nvim' " All the lua functions I don't want to write twice
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'folke/trouble.nvim' " Show me troubles
-Plug 'jose-elias-alvarez/null-ls.nvim' " vale for writers
-Plug 'jceb/vim-orgmode'
-" Plug 'pearofducks/ansible-vim'
+Plug 'folke/trouble.nvim' " Show me troubles
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plug 'scrooloose/nerdcommenter' " Easy commenting
 Plug 'tpope/vim-sensible' " Sensible defaults for Vim
@@ -142,7 +141,7 @@ set wildignore+=*/deps/*,*/priv/*,*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bund
 "let g:ctrlp_max_height = 30
 
 " Remove ugly buffer divider
-:set fillchars+=vert:\ 
+:set fillchars+=vert:\
 
 " Highlight search matches
 set hlsearch

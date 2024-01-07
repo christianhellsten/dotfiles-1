@@ -56,6 +56,7 @@ ulimit -Sl unlimited # Increase max locked memory.
 
 export THOR_MERGE=vimdiff
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -63,24 +64,25 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(starship init zsh)"
+eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 # direnv for .env files
 eval "$(direnv hook zsh)"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+export PATH="/usr/local/opt/node@14/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/christian/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/christian/miniconda/etc/profile.d/conda.sh" ]; then
-        . "/Users/christian/miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/christian/miniconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/Users/christian/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/christian/miniconda/etc/profile.d/conda.sh" ]; then
+#         . "/Users/christian/miniconda/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/christian/miniconda/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
-
-#. /opt/homebrew/opt/asdf/libexec/asdf.sh
-eval "$(rbenv init - zsh)"
-export PATH="/opt/homebrew/bin:$(go env GOPATH)/bin:$PATH"

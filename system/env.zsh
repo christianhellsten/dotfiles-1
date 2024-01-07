@@ -12,6 +12,7 @@ export PATH=~/.pyenv/shims/:~/bin:$PATH
 # export GOPATH="$HOME/golang"
 export PATH="./bin:$GOPATH/bin:$PATH"
 
+export PATH=~/bin:~/go/bin:$PATH
 # No duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
 
