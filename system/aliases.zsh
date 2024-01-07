@@ -1,11 +1,12 @@
 alias ls="ls -lah"
-alias docker="podman"
-alias docker-compose="podman-compose"
+#alias docker="podman"
+#alias docker-compose="podman-compose"
 alias vim='/opt/homebrew/bin/nvim'
 alias vi='/opt/homebrew/bin/nvim'
 # What's my IP?
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ipaddr='wanip && ipconfig getifaddr en1'
+alias python="python3"
 # Recursive grep
 alias rgrep="grep -r"
 alias rt="bundle exec rails test"

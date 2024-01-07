@@ -22,12 +22,19 @@ set noeol
 " Force vim to use python3
 if has('python3')
 endif
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
-" Fix Python files with autopep8 and yapf.
-let b:ale_fixers = ['autopep8', 'yapf']
-" Check Python files with flake8 and pylint.
-let b:ale_linters = ['flake8', 'pylint']
+" let g:python2_host_prog = '/opt/homebrew/bin/python2'
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
+let g:ale_linters = {
+      \  'python': ['ruff'],
+      \  'css': ['stylelint'],
+      \  'scss': ['stylelint'],
+      \}
+let g:ale_fixers = {
+      \  'python': ['black', 'ruff'],
+      \  'javascript': ['prettier'],
+      \  'css': ['prettier'],
+      \}
+let g:ale_fix_on_save = 1
 " CSV plugin does not work
 let g:polyglot_disabled = ['csv']
 
@@ -51,12 +58,13 @@ nnoremap t<c-n> :TestNearest<cr>
 nnoremap t<c-l> :TestLast<cr>
 nnoremap t<c-f> :TestFile<cr>
 
+Plug 'ruby-formatter/rufo-vim'
 Plug 'nvim-lua/plenary.nvim' " All the lua functions I don't want to write twice
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/trouble.nvim' " Show me troubles
+" Plug 'folke/trouble.nvim' " Show me troubles
 Plug 'jose-elias-alvarez/null-ls.nvim' " vale for writers
 Plug 'jceb/vim-orgmode'
-Plug 'pearofducks/ansible-vim'
+" Plug 'pearofducks/ansible-vim'
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plug 'scrooloose/nerdcommenter' " Easy commenting
 Plug 'tpope/vim-sensible' " Sensible defaults for Vim
@@ -271,6 +279,20 @@ set shiftwidth=2
 set expandtab
 
 "
+" ChatGPT
+"
+" let g:chat_gpt_max_tokens=32768
+" let g:chat_gpt_max_tokens=8134
+let g:chat_gpt_model='gpt-4'
+" 32k not available through API yet
+" let g:chat_gpt_model='gpt-4-32k'
+let g:chat_gpt_session_mode=1
+let g:chat_gpt_temperature = 1
+let g:chat_gpt_lang = 'English'
+let g:chat_gpt_split_direction = 'vertical'
+
+
+"
 " Tabs to spaces etc, LOL.
 "
 "autocmd Filetype html setlocal ts=2 sw=2 expandtab
@@ -280,15 +302,15 @@ set expandtab
 "
 "
 
-lua << EOF
-  require("trouble").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-  require("null-ls").setup({
-      sources = {
-          require("null-ls").builtins.diagnostics.vale,
-      },
-  })
-EOF
+"lua << EOF
+"  require("trouble").setup {
+"    -- your configuration comes here
+"    -- or leave it empty to use the default settings
+"    -- refer to the configuration section below
+"  }
+"  require("null-ls").setup({
+"      sources = {
+"          require("null-ls").builtins.diagnostics.vale,
+"      },
+"  })
+"EOF

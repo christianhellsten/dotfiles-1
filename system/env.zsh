@@ -3,13 +3,12 @@ export EDITOR='nvim'
 # No "bundle exec". Requires Rubygems 2.2. Crap doesn't work...
 # export RUBYGEMS_GEMDEPS=-
 #
-export PATH=~/bin:$PATH
+export PATH=~/.pyenv/shims/:~/bin:$PATH
+
 
 # Legacy stuff, LOL
 #export JAVA_HOME=`/usr/libexec/java_home -v 14`
 
-# Go
-export GOPATH="$HOME/Documents/projects/golang"
 # export GOPATH="$HOME/golang"
 export PATH="./bin:$GOPATH/bin:$PATH"
 
