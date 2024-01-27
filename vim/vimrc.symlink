@@ -38,7 +38,7 @@ let g:ale_fixers = {
       \}
 let g:ale_fix_on_save = 1
 " CSV plugin does not work
-let g:polyglot_disabled = ['csv']
+" let g:polyglot_disabled = ['csv']
 
 " Fix airline-vim performance issues
 set fillchars=diff:·
@@ -76,8 +76,8 @@ Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
 Plug 'dense-analysis/ale' " Asynchronous Lint Engine
-" Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Make your Vim/Neovim as smart as VSCode
+" Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 " Plug 'fatih/vim-go' " Go syntax
 Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 " Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
@@ -314,3 +314,26 @@ let g:chat_gpt_split_direction = 'vertical'
 "      },
 "  })
 "EOF
+
+if empty(glob('~/.config/coc/extensions/package.json'))
+  " solargraph = ruby
+  silent! CocInstall coc-prettier coc-python coc-json coc-solargraph
+endif
+
+" Formats files on save
+augroup prettier
+  autocmd!
+  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.html,*.rb,*.py silent! CocCommand prettier.formatFile
+augroup END
+
+" Lints and potentially fixes SCSS and CSS files on file open and save
+augroup stylelint
+  autocmd!
+  autocmd BufRead,BufWritePre *.scss,*.css silent! CocCommand stylelint.executeAutofix
+augroup END
+
+" Lints and potentially fixes JavaScript and TypeScript files on file open and save
+augroup eslint
+  autocmd!
+  autocmd BufRead,BufWritePre *.js,*.cjs,*.mjs,*.ts silent! CocCommand eslint.executeAutofix
+augroup END
