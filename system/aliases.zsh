@@ -1,8 +1,8 @@
 alias ls="ls -lah"
 #alias docker="podman"
 #alias docker-compose="podman-compose"
-alias vim='/usr/local/bin/nvim'
-alias vi='/usr/local/bin/nvim'
+alias vim='nvim'
+alias vi='nvim'
 # What's my IP?
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ipaddr='wanip && ipconfig getifaddr en1'

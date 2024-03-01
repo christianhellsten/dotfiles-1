@@ -26,22 +26,24 @@ endif
 let g:python3_host_prog = '/opt/homebrew/bin/python3'
 " let g:python2_host_prog = '/usr/local/bin/python'
 " let g:python3_host_prog = '/usr/local/bin/python3'
-let g:ale_linters = {
-      \  'python': ['ruff'],
-      \  'css': ['stylelint'],
-      \  'scss': ['stylelint'],
-      \}
-let g:ale_fixers = {
-      \  'python': ['black', 'ruff'],
-      \  'javascript': ['prettier'],
-      \  'css': ['prettier'],
-      \}
-let g:ale_fix_on_save = 1
+" let g:ale_linters = {
+"       \  'python': ['ruff'],
+"       \  'css': ['stylelint'],
+"       \  'scss': ['stylelint'],
+"       \}
+" let g:ale_fixers = {
+"       \  'python': ['black', 'ruff'],
+"       \  'javascript': ['prettier'],
+"       \  'css': ['prettier'],
+"       \}
+" let g:ale_fix_on_save = 1
 " CSV plugin does not work
 " let g:polyglot_disabled = ['csv']
 
 " Fix airline-vim performance issues
 set fillchars=diff:·
+" Set split separator
+set fillchars=vert:\│
 
 " NOTE: stupid rule:
 " Remind me to use jk instead of ESC
@@ -75,7 +77,7 @@ Plug 'morhetz/gruvbox' "Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status and tab styling
-Plug 'dense-analysis/ale' " Asynchronous Lint Engine
+" Plug 'dense-analysis/ale' " Asynchronous Lint Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Make your Vim/Neovim as smart as VSCode
 " Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 " Plug 'fatih/vim-go' " Go syntax
@@ -216,56 +218,6 @@ set backupdir=/tmp
       "
       "
 
-
-"
-" Requires xmllint CLI
-"
-function! DoPrettyXML()
-  " save the filetype so we can restore it later
-  let l:origft = &ft
-  set ft=
-  " delete the xml header if it exists. This will
-  " permit us to surround the document with fake tags
-  " without creating invalid xml.
-  1s/<?xml .*?>//e
-  " insert fake tags around the entire document.
-  " This will permit us to pretty-format excerpts of
-  " XML that may contain multiple top-level elements.
-  0put ='<PrettyXML>'
-  $put ='</PrettyXML>'
-  silent %!xmllint --format -
-  " xmllint will insert an <?xml?> header. it's easy enough to delete
-  " if you don't want it.
-  " delete the fake tags
-  2d
-  $d
-  " restore the 'normal' indentation, which is one extra level
-  " too deep due to the extra tags we wrapped around the document.
-  silent %<
-  " back to home
-  1
-  " restore the filetype
-  exe "set ft=" . l:origft
-endfunction
-command! PrettyXML call DoPrettyXML()
-
-"
-" Requires node CLI
-"
-function DoPrettyJSON(...)
-  let code="\"
-        \ var i = process.stdin, d = '';
-        \ i.resume();
-        \ i.setEncoding('utf8');
-        \ i.on('data', function(data) { d += data; });
-        \ i.on('end', function() {
-        \     console.log(JSON.stringify(JSON.parse(d), null,
-        \ " . (a:0 ? a:1 ? a:1 : 2 : 2) . "));
-        \ });\""
-  execute "%! node -e " . code
-endfunction
-command! PrettyJSON call DoPrettyJSON()
-
 "
 " Copy to OSX clipboard when yanking
 "
@@ -317,14 +269,15 @@ let g:chat_gpt_split_direction = 'vertical'
 
 if empty(glob('~/.config/coc/extensions/package.json'))
   " solargraph = ruby
-  silent! CocInstall coc-prettier coc-python coc-json coc-solargraph
+  silent! CocInstall coc-prettier coc-python coc-json coc-solargraph coc-html coc-css
 endif
 
 " Formats files on save
-augroup prettier
-  autocmd!
-  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.html,*.rb,*.py silent! CocCommand prettier.formatFile
-augroup END
+" NOTE: use ~/.config/nvim/coc-settings.json
+" augroup prettier
+"   autocmd!
+"   autocmd BufWritePre *.json,*.js,*.jsx,*.ts,*.tsx,*.css,*.html,*.rb,*.py silent! CocCommand prettier.formatFile
+" augroup END
 
 " Lints and potentially fixes SCSS and CSS files on file open and save
 augroup stylelint
