@@ -6,10 +6,12 @@
 # Use with caution in interactive shells.
 # set -e
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=247'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=247'
 
-FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git --exclude .cache'
-FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
+# Tell fzf to use ripgrep and respect .gitignore
+export FZF_DEFAULT_COMMAND='rg --files --ignore --hidden --follow --glob "!.git/*"'
+# export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
+# export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 # History settings
 setopt hist_ignore_space         # Ignore commands that start with a space.
@@ -76,9 +78,6 @@ ulimit -Sl unlimited             # Set the limit for locked memory to unlimited.
 # Merge tool for THOR
 export THOR_MERGE=vimdiff
 
-# Tell fzf to use ripgrep and respect .gitignore
-export FZF_DEFAULT_COMMAND='rg --files --ignore --hidden --follow --glob "!.git/*"'
-
 # Add various paths to the PATH environment variable.
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
@@ -135,3 +134,9 @@ eval "$(rbenv init -)"           # Initialize rbenv.
 eval "$(pyenv init -)"           # Initialize pyenv.
 eval "$(direnv hook zsh)"        # Initialize direnv.
 # eval "$(jenv init -)"
+
+#
+# Bind TAB, instead of CTLR+E, to autosuggest-accept from zsh-users/zsh-autosuggestions
+#
+# bindkey '^I' autosuggest-accept
+
