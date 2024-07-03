@@ -80,7 +80,7 @@ Plug 'vim-airline/vim-airline-themes' " status and tab styling
 " Plug 'dense-analysis/ale' " Asynchronous Lint Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Make your Vim/Neovim as smart as VSCode
 " Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
-" Plug 'fatih/vim-go' " Go syntax
+Plug 'fatih/vim-go' " Go syntax
 Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
 " Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 " Plug 'posva/vim-vue' " Vue.js
@@ -269,7 +269,8 @@ let g:chat_gpt_split_direction = 'vertical'
 
 if empty(glob('~/.config/coc/extensions/package.json'))
   " solargraph = ruby
-  silent! CocInstall coc-prettier coc-python coc-json coc-solargraph coc-html coc-css
+  " pyright = python
+  silent! CocInstall coc-prettier coc-pyright coc-json coc-solargraph coc-html coc-css
 endif
 
 " Formats files on save
@@ -278,6 +279,13 @@ endif
 "   autocmd!
 "   autocmd BufWritePre *.json,*.js,*.jsx,*.ts,*.tsx,*.css,*.html,*.rb,*.py silent! CocCommand prettier.formatFile
 " augroup END
+
+" vim-go settings
+" let g:go_fmt_command = "goimports"  " Use goimports for formatting
+autocmd BufWritePre *.go :silent! :GoFmt  " Format on save
+
+" Lint on save
+" autocmd BufWritePost *.go :GoMetaLinter
 
 " Lints and potentially fixes SCSS and CSS files on file open and save
 augroup stylelint

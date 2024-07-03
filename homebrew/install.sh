@@ -16,6 +16,7 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 brew install overmind || true # Procfile
+brew install zplug || true # zsh plugins
 # FZF
 brew install fzf || true
 # FZF END
@@ -28,7 +29,7 @@ brew install homebrew/cask-fonts/font-fira-code || true
 brew install tree || true
 brew install repren || true # rename anything
 brew install wget || true
-brew install the_silver_searcher || true # ag
+brew install ripgrep || true # ag
 brew install zsh || true
 brew install nvim || true
 brew install direnv || true # .envrc loader

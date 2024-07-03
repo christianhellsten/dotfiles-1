@@ -30,3 +30,11 @@ alias docker-clean=' \
   docker volume prune -f '
 alias start-postgres='nohup /opt/homebrew/opt/postgresql@12/bin/postgres -D /opt/homebrew/var/postgresql@12 > /tmp/postgres.log &'
 alias stop-postgres='pg_ctl -D /opt/homebrew/opt/postgresql@12/bin/postgres stop -s -m fast'
+
+# Run a Postgres query, e.g., pquery db_name "\d+ tags"
+pquery() {
+  local dbname=$1
+  shift
+  local query="$@"
+  psql -d "$dbname" -c "$query"
+}

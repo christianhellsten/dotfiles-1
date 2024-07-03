@@ -1,88 +1,128 @@
-# NOTE: Don't enable this. It will crash zshrc...
+# ========================
+# Zsh Configuration File
+# ========================
+
+# NOTE: Uncommenting the following line will cause zsh to exit immediately if any command exits with a non-zero status.
+# Use with caution in interactive shells.
 # set -e
 
-export LC_ALL=en_US.UTF-8
-# Fix "Inappropriate ioctl for device"
-export GPG_TTY=$(tty)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=247'
 
+FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git --exclude .cache'
+FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
+
+# History settings
+setopt hist_ignore_space         # Ignore commands that start with a space.
+setopt hist_ignore_dups          # Ignore duplicate commands in the history.
+setopt hist_ignore_all_dups      # Remove all previous lines matching the current line from the history.
+setopt hist_reduce_blanks        # Remove superfluous blanks before storing a command in the history.
+
+# Locale settings
+export LC_ALL=en_US.UTF-8        # Set locale settings to ensure consistent behavior across different programs.
+
+# Fix "Inappropriate ioctl for device"
+export GPG_TTY=$(tty)            # Set GPG_TTY to the current terminal to fix issues with GPG.
+
+# Custom environment variable, possibly used by specific plugins or scripts.
 export DISABLE_MAGIC_FUNCTIONS=true
 
+# Uncomment and add plugins if needed
 # plugins=(... dotenv)
 
-# shortcut to this dotfiles path is $ZSH
-#
-export ZSH=$HOME/.dotfiles
+# Dotfiles path
+export ZSH=$HOME/.dotfiles       # Set the ZSH environment variable to the path of the dotfiles directory.
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/projects
+# Projects path for quick navigation
+export PROJECTS=~/projects       # Set the PROJECTS environment variable to the path of your projects directory.
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
+# Source .localrc if it exists for sensitive configuration.
+if [[ -a ~/.localrc ]]; then
   source ~/.localrc
 fi
 
-# all of our zsh files
+# Collect all .zsh files in the .dotfiles directory.
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
+# Load the path files
+for file in ${(M)config_files:#*/path.zsh}; do
   source $file
 done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
+# Load all .zsh files except path.zsh and completion.zsh.
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
+# Initialize the completion system.
 autoload -U compinit
 compinit
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
+# Load every completion file after autocomplete loads.
+for file in ${(M)config_files:#*/completion.zsh}; do
   source $file
 done
 
+# Clean up the environment by unsetting config_files.
 unset config_files
 
-ulimit -Sn 4096      # Increase open files.
-ulimit -Sl unlimited # Increase max locked memory.
+# System limits
+ulimit -Sn 4096                  # Increase the limit for the number of open files.
+ulimit -Sl unlimited             # Set the limit for locked memory to unlimited.
 
+# Merge tool for THOR
 export THOR_MERGE=vimdiff
+
+# Add various paths to the PATH environment variable.
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+# export PATH="$HOME/.jenv/bin:$PATH"
+
+# Add zsh completions to function path.
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# Source fzf.zsh if it exists.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Source iTerm2 shell integration script if it exists.
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-eval "$(starship init zsh)"
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
-# direnv for .env files
-eval "$(direnv hook zsh)"
-# export PATH="$HOME/.jenv/bin:$PATH"
-# eval "$(jenv init -)"
-export PATH="/usr/local/opt/node@14/bin:$PATH"
+# Set the mark-modified-lines option off.
+set mark-modified-lines Off
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/christian/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/Users/christian/miniconda/etc/profile.d/conda.sh" ]; then
-#         . "/Users/christian/miniconda/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/Users/christian/miniconda/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
+#
+# ZPLUG
+#
+# Plugins
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
+zplug "woefe/wbase.zsh"
+zplug "woefe/git-prompt.zsh", use:"{git-prompt.zsh,examples/wprompt.zsh}"
+zplug "junegunn/fzf", use:"shell/*.zsh"
+# zplug "sharkdp/fd", from:gh-r, as:command, use:fd, rename-to:fd
+zplug "docker/cli", use:contrib/completion/zsh, defer:3
+zplug "docker/compose", use:contrib/completion/zsh, defer:3
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:3
+
+# Check if all plugins were successfully loaded
+if ! zplug check --verbose; then
+  zplug install
+fi
+
+# zplug load --verbose
+zplug load
+
+#
+# ZPLUG END
+#
+
+# Initialize various tools and plugins.
+# eval "$(starship init zsh)"      # Initialize Starship prompt.
+eval "$(rbenv init -)"           # Initialize rbenv.
+eval "$(pyenv init -)"           # Initialize pyenv.
+eval "$(direnv hook zsh)"        # Initialize direnv.
+# eval "$(jenv init -)"
