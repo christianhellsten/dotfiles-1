@@ -17,6 +17,9 @@ setopt hist_ignore_dups          # Ignore duplicate commands in the history.
 setopt hist_ignore_all_dups      # Remove all previous lines matching the current line from the history.
 setopt hist_reduce_blanks        # Remove superfluous blanks before storing a command in the history.
 
+# nvim
+export EDITOR='nvim'
+
 # Locale settings
 export LC_ALL=en_US.UTF-8        # Set locale settings to ensure consistent behavior across different programs.
 
@@ -73,10 +76,16 @@ ulimit -Sl unlimited             # Set the limit for locked memory to unlimited.
 # Merge tool for THOR
 export THOR_MERGE=vimdiff
 
+# Tell fzf to use ripgrep and respect .gitignore
+export FZF_DEFAULT_COMMAND='rg --files --ignore --hidden --follow --glob "!.git/*"'
+
 # Add various paths to the PATH environment variable.
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/opt/node@14/bin:$PATH"
+export PATH="~/bin:~/go/bin:$PATH"
+export PATH="~/.pyenv/shims/:~/bin:$PATH"
+
 # export PATH="$HOME/.jenv/bin:$PATH"
 
 # Add zsh completions to function path.

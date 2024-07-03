@@ -71,7 +71,6 @@ Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plug 'scrooloose/nerdcommenter' " Easy commenting
 Plug 'tpope/vim-sensible' " Sensible defaults for Vim
 Plug 'tpope/vim-fugitive' " Git integration
-Plug 'rking/ag.vim' " Silver searcher integration
 Plug 'nanotech/jellybeans.vim' " Theme
 Plug 'morhetz/gruvbox' "Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
@@ -181,7 +180,7 @@ nnoremap <S-Tab> gT
 "noremap <leader>8 8gt
 "noremap <leader>9 9gt
 "noremap <leader>0 :tablast<cr>
-nnoremap <D-f> :Ag
+" nnoremap <D-f> :Ag
 " NERDTree = ctrl-n
 "nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
