@@ -1,6 +1,11 @@
 """"""""""""""""""""""""""""
 " # Tips
 "
+" ## Debug
+"
+" :checkhealth
+" :verbose=9
+"
 " ## Code completion shortcuts
 "
 " ctrl+x+p
@@ -9,6 +14,13 @@
 " ## File opener
 "
 " ctrl+p Open file
+"
+" ## Search
+"
+" shift+f
+"
+" :grep <pattern>
+" :grep <c-r><c-w>
 "
 "
 set nocompatible
@@ -56,36 +68,38 @@ call plug#begin('~/.vim/plugged')
 " Macvim+fzf requires:
 " $ brew install fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'  " fzf, ripgrep, and ag integration
 nnoremap <c-p> :Files<cr>
-Plug 'janko-m/vim-test' " Run your tests at the speed of thought - GitHub
+Plug 'janko-m/vim-test' " Run your tests at the speed of thought
 nnoremap t<c-n> :TestNearest<cr>
 nnoremap t<c-l> :TestLast<cr>
 nnoremap t<c-f> :TestFile<cr>
 
-" Plug 'ruby-formatter/rufo-vim'
+Plug 'tpope/vim-sensible' " Sensible defaults for Vim
 Plug 'nvim-lua/plenary.nvim' " All the lua functions I don't want to write twice
-" Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim' " Show me troubles
 Plug 'bronson/vim-trailing-whitespace' " Highlight trailing whitespace
 Plug 'scrooloose/nerdcommenter' " Easy commenting
-Plug 'tpope/vim-sensible' " Sensible defaults for Vim
 Plug 'tpope/vim-fugitive' " Git integration
-Plug 'nanotech/jellybeans.vim' " Theme
+" Plug 'nanotech/jellybeans.vim' " Theme
 Plug 'morhetz/gruvbox' "Theme
 Plug 'lsdr/monokai' " Sublimetext's theme
-Plug 'vim-airline/vim-airline' " status bar
-Plug 'vim-airline/vim-airline-themes' " status and tab styling
-" Plug 'dense-analysis/ale' " Asynchronous Lint Engine
+Plug 'vim-airline/vim-airline' " Status bar
+Plug 'vim-airline/vim-airline-themes' " Status and tab styling
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Make your Vim/Neovim as smart as VSCode
-" Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
 Plug 'fatih/vim-go' " Go syntax
 Plug 'tpope/vim-endwise' " Add 'end' automatically to Ruby code
-" Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
-" Plug 'posva/vim-vue' " Vue.js
-" Plug 'leafgarland/typescript-vim' " TypeScript
 
 " Disabled plugins
+" Plug 'mileszs/ack.vim' " ag, ripgrep integration no good
+"Plug 'rking/ag.vim' " DEPRECATED: Search plugin using thesilversearcher/ripgrep
+"Plug 'ruby-formatter/rufo-vim'
+"Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'dense-analysis/ale' " Asynchronous Lint Engine
+"Plug 'vim-ruby/vim-ruby' " Ruby syntax highlighting, smart indenting, autocompletion, compiling
+"Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
+"Plug 'posva/vim-vue' " Vue.js
+"Plug 'leafgarland/typescript-vim' " TypeScript
 "Plug 'vim-scripts/SQLUtilities' # Does not do what it says
 "Plug 'Valloric/YouCompleteMe' " Code completion. Not working.
 "Plug 'docunext/closetag.vim' " Close HTML and XML tags
@@ -180,9 +194,31 @@ nnoremap <S-Tab> gT
 "noremap <leader>8 8gt
 "noremap <leader>9 9gt
 "noremap <leader>0 :tablast<cr>
-" nnoremap <D-f> :Ag
+"
+" Define a custom command Rg to search file content using ripgrep and fzf with preview
+command! -nargs=+ -complete=file FileSearch call s:FileSearch(<f-args>)
+
+" File search using ripgrep and fzf
+function! s:FileSearch(...) abort
+  let l:args = a:000
+  if len(l:args) < 1
+    echoerr "Usage: Rg <query> [<file|directory>]"
+    return
+  endif
+  " Create a list of escaped arguments
+  let l:escaped_args = map(copy(l:args), 'shellescape(v:val)')
+  " Concatenate all arguments into the rg command
+  let l:cmd = 'rg --column --line-number --no-heading --color=always --smart-case ' . join(l:escaped_args, ' ')
+  " Execute the search with fzf
+  call fzf#vim#grep(l:cmd, 1, fzf#vim#with_preview())
+endfunction
+
+" Map Shift+F to the custom FileSearch command
+nnoremap <S-F> :FileSearch<Space>
+
 " NERDTree = ctrl-n
 "nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+"
 
 " Show 'weird' characters, e.g. encoded space
 set list
