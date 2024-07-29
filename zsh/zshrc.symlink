@@ -103,8 +103,24 @@ set mark-modified-lines Off
 # ZPLUG
 #
 # Plugins
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
+if [ -d /opt/homebrew/opt/zplug ]; then
+  export ZPLUG_HOME=/opt/homebrew/opt/zplug
+elif [ -d /usr/local/opt/zplug ]; then
+  export ZPLUG_HOME=/usr/local/opt/zplug
+else
+  echo "zplug is not installed in the known locations."
+fi
 source $ZPLUG_HOME/init.zsh
+
+# Check if all zplug plugins are installed, if not, install them
+if ! zplug check --verbose; then
+  if zplug install; then
+    echo "Plugins installed successfully."
+  else
+    echo "Failed to install plugins. Please check your zplug configuration."
+  fi
+fi
+
 zplug "woefe/wbase.zsh"
 zplug "woefe/git-prompt.zsh", use:"{git-prompt.zsh,examples/wprompt.zsh}"
 zplug "junegunn/fzf", use:"shell/*.zsh"
@@ -115,11 +131,6 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
-
-# Check if all plugins were successfully loaded
-if ! zplug check --verbose; then
-  zplug install
-fi
 
 # zplug load --verbose
 zplug load
