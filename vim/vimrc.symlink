@@ -195,23 +195,22 @@ nnoremap <S-Tab> gT
 "noremap <leader>9 9gt
 "noremap <leader>0 :tablast<cr>
 "
-" Define a custom command Rg to search file content using ripgrep and fzf with preview
-command! -nargs=+ -complete=file FileSearch call s:FileSearch(<f-args>)
-
 " File search using ripgrep and fzf
-function! s:FileSearch(...) abort
-  let l:args = a:000
-  if len(l:args) < 1
-    echoerr "Usage: Rg <query> [<file|directory>]"
-    return
-  endif
-  " Create a list of escaped arguments
-  let l:escaped_args = map(copy(l:args), 'shellescape(v:val)')
-  " Concatenate all arguments into the rg command
-  let l:cmd = 'rg --column --line-number --no-heading --color=always --smart-case ' . join(l:escaped_args, ' ')
+function! s:FileSearch(query, ...) abort
+  let l:targets = a:000
+  " The query is passed as the first argument, already escaped using q-args
+  " NOTE: Using f-args and args wouldn't work
+  let l:query = a:query
+  " The rest (if any) are the target files or directories
+  let l:escaped_targets = map(copy(l:targets), 'shellescape(v:val)')
+  " Concatenate the command
+  let l:cmd = 'rg --column --line-number --no-heading --color=always --smart-case ' . l:query . ' ' . join(l:escaped_targets, ' ')
   " Execute the search with fzf
   call fzf#vim#grep(l:cmd, 1, fzf#vim#with_preview())
 endfunction
+
+" Define a custom command to search file content using ripgrep and fzf with preview
+command! -nargs=+ -complete=file FileSearch call s:FileSearch(<q-args>)
 
 " Map Shift+F to the custom FileSearch command
 nnoremap <S-F> :FileSearch<Space>
