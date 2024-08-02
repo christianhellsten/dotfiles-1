@@ -198,15 +198,32 @@ nnoremap <S-Tab> gT
 " File search using ripgrep and fzf
 function! s:FileSearch(query, ...) abort
   let l:targets = a:000
-  " The query is passed as the first argument, already escaped using q-args
-  " NOTE: Using f-args and args wouldn't work
   let l:query = a:query
-  " The rest (if any) are the target files or directories
   let l:escaped_targets = map(copy(l:targets), 'shellescape(v:val)')
-  " Concatenate the command
   let l:cmd = 'rg --column --line-number --no-heading --color=always --smart-case ' . l:query . ' ' . join(l:escaped_targets, ' ')
-  " Execute the search with fzf
-  call fzf#vim#grep(l:cmd, 1, fzf#vim#with_preview())
+
+  " Execute the command and capture output and exit status
+  let l:output = systemlist(l:cmd)
+  let l:status = v:shell_error
+
+  if l:status == 1
+    " If no match was found, display a message
+    echohl WarningMsg
+    echom "No results found for the query: " . l:query . " and cmd: " . l:cmd
+    echohl None
+  elseif l:status == 2
+    " If an error occurred, display an error message with details
+    echohl ErrorMsg
+    if len(l:output) > 0
+      echom "rg error: " . join(l:output, "\n")
+    else
+      echom "rg error: An unspecified error occurred."
+    endif
+    echohl None
+  else
+    " If rg succeeded, call fzf
+    call fzf#vim#grep(l:cmd, 1, fzf#vim#with_preview())
+  endif
 endfunction
 
 " Define a custom command to search file content using ripgrep and fzf with preview
